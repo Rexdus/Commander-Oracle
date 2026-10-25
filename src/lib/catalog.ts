@@ -205,8 +205,18 @@ function buildIdentifiers(rows: EdhrecRow[]): Identifier[] {
         seen.add(key);
         identifiers.push({ id: row.id });
       }
-      continue;
     }
+
+    // EDHREC gives partner/background pairs a combined ID that Scryfall does
+    // not always resolve. Also request each half by name so their color
+    // identities can be unioned.
+    const needsNames =
+      !row.id ||
+      Boolean(row.cards?.length) ||
+      row.is_partner === true ||
+      row.name.includes("//");
+    if (!needsNames) continue;
+
     for (const name of rowNames(row)) {
       const key = `name:${normalizeName(name)}`;
       if (!seen.has(key)) {

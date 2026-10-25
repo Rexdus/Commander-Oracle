@@ -332,4 +332,109 @@ assert.equal(thousandCatalog.commanders.at(-1)?.rank, 1000);
 assert.ok(thousandCatalog.commanders.every((cmd) => cmd.colors.length > 0));
 assert.ok(thousandCatalog.commanders.every((cmd) => Boolean(cmd.scryfallId)));
 
+
+// Partner/background rows union color identities from both halves.
+const partnerPage = {
+  container: {
+    json_dict: {
+      cardlists: [
+        {
+          cardviews: [
+            {
+              id: "id-pair",
+              name: "Partner A // Partner B",
+              sanitized: "partner-a-partner-b",
+              url: "/commanders/partner-a-partner-b",
+              num_decks: 1000,
+              rank: 1,
+              trend_zscore: 0,
+              cards: [
+                { name: "Partner A", url: "partner-a" },
+                { name: "Partner B", url: "partner-b" },
+              ],
+              is_partner: true,
+            },
+          ],
+        },
+      ],
+    },
+  },
+};
+const partnerScryfallCards = [
+  {
+    id: "id-pair",
+    oracle_id: "oracle-pair",
+    name: "Partner A // Partner B",
+    type_line:
+      "Legendary Creature — Human // Legendary Enchantment — Background",
+    oracle_text: "Choose a Background. Whenever you cast an instant spell, scry 1.",
+    color_identity: [],
+    prices: { usd: "1.00" },
+    released_at: "2026-01-01",
+    set_name: "Test Set",
+  },
+  {
+    id: "id-a",
+    oracle_id: "oracle-a",
+    name: "Partner A",
+    type_line: "Legendary Creature — Human Soldier",
+    oracle_text: "Whenever you attack, create a 1/1 white Soldier creature token.",
+    color_identity: ["W"],
+    prices: { usd: "0.50" },
+    released_at: "2026-01-01",
+    set_name: "Test Set",
+  },
+  {
+    id: "id-b",
+    oracle_id: "oracle-b",
+    name: "Partner B",
+    type_line: "Legendary Enchantment — Background",
+    oracle_text: "Commander creatures you own have ward {1}.",
+    color_identity: ["U"],
+    prices: { usd: "0.75" },
+    released_at: "2026-01-01",
+    set_name: "Test Set",
+  },
+];
+let partnerIdentifiers: Array<Record<string, string>> = [];
+const partnerFetch = (async (
+  input: RequestInfo | URL,
+  init?: RequestInit,
+) => {
+  const url = String(input);
+  if (url.endsWith("commanders/year.json")) {
+    return jsonResponse(partnerPage);
+  }
+  if (url.includes("cards/collection")) {
+    const body = JSON.parse(String(init?.body ?? "{}")) as {
+      identifiers?: Array<Record<string, string>>;
+    };
+    partnerIdentifiers.push(...(body.identifiers ?? []));
+    return jsonResponse({ data: partnerScryfallCards });
+  }
+  return new Response("{}", { status: 404 });
+}) as typeof fetch;
+
+const partnerCatalog = await buildLiveCatalog({
+  seed: [],
+  pages: 1,
+  fetchImpl: partnerFetch,
+  generatedAt: "2026-10-24T12:00:00.000Z",
+});
+assert.equal(partnerCatalog.commanders.length, 1);
+assert.deepEqual(partnerCatalog.commanders[0].colors, ["W", "U"]);
+assert.equal(partnerCatalog.commanders[0].partner, true);
+assert.ok(
+  partnerIdentifiers.some(
+    (identifier) =>
+      "name" in identifier && identifier.name === "Partner A",
+  ),
+);
+assert.ok(
+  partnerIdentifiers.some(
+    (identifier) =>
+      "name" in identifier && identifier.name === "Partner B",
+  ),
+);
+
 console.log("Smoke tests passed");
