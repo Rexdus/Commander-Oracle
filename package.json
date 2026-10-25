@@ -11,7 +11,9 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "data:refresh": "tsx scripts/refresh-catalog.ts",
-    "test:smoke": "tsx scripts/smoke-test.ts"
+    "test:smoke": "tsx scripts/smoke-test.ts",
+    "test:personas": "tsx scripts/persona-test.ts",
+    "test": "npm run test:smoke && npm run test:personas"
   },
   "dependencies": {
     "clsx": "2.1.1",

@@ -8,12 +8,23 @@ import type {
   Question,
 } from "./types";
 import { DEFAULT_PREFERENCES } from "./types";
-import { CORE_QUESTIONS, QUESTIONS } from "./data/questions";
+import { ADAPTIVE_QUESTIONS } from "./data/questions";
+import {
+  FULL_ADAPTIVE_LIMIT,
+  FULL_QUIZ_LENGTH,
+  QUICK_ADAPTIVE_LIMIT,
+  QUICK_QUIZ_LENGTH,
+  adaptiveIdsFromPicks,
+  answersForBaseQuestions,
+  baseQuestionsFor,
+  encodingDeckFor,
+  selectAdaptiveQuestions,
+} from "./lib/questions";
 import {
   CURATED_COMMANDERS,
   INITIAL_CATALOG,
 } from "./data/commanders";
-import { ARCHES, buildProfile, scoreCommanders } from "./lib/scoring";
+import { buildProfile, scoreCommanders } from "./lib/scoring";
 import {
   buildLiveCatalog,
   DEFAULT_CATALOG_PAGES,
@@ -25,7 +36,7 @@ import {
   parseResultHash,
 } from "./lib/share";
 import { loadJson, saveJson } from "./lib/storage";
-import { Backdrop, ManaPip } from "./components/ui";
+import { Backdrop, CardArt, ManaPip } from "./components/ui";
 import CatalogStatusBadge from "./components/CatalogStatus";
 import Compare, { CompareTray } from "./components/Compare";
 import Explorer from "./components/Explorer";
@@ -52,8 +63,10 @@ const PREFERENCES_KEY = "commander-oracle-preferences-v1";
 const SHARED_RESULT =
   typeof window !== "undefined" ? parseResultHash(window.location.hash) : null;
 const INITIAL_MODE: Mode = SHARED_RESULT?.mode ?? "full";
-const INITIAL_DECK: Question[] =
-  INITIAL_MODE === "quick" ? CORE_QUESTIONS : QUESTIONS;
+const INITIAL_DECK: Question[] = encodingDeckFor(INITIAL_MODE);
+const INITIAL_ADAPTIVE_IDS = SHARED_RESULT
+  ? adaptiveIdsFromPicks(SHARED_RESULT.picks)
+  : [];
 
 function loadInitialCatalog(): {
   catalog: CommanderCatalog;
@@ -102,6 +115,8 @@ export default function App() {
   const [picks, setPicks] = useState<Record<string, Option>>(
     SHARED_RESULT?.picks ?? {},
   );
+  const [adaptiveIds, setAdaptiveIds] =
+    useState<string[]>(INITIAL_ADAPTIVE_IDS);
   const [loadLine, setLoadLine] = useState(0);
   const [exploreOrigin, setExploreOrigin] =
     useState<ExploreOrigin>("intro");
@@ -131,10 +146,30 @@ export default function App() {
   const didInitialRefresh = useRef(false);
 
   const commanders = catalog.commanders;
-  const deck: Question[] = useMemo(
-    () => (mode === "quick" ? CORE_QUESTIONS : QUESTIONS),
-    [mode],
-  );
+  const baseDeck = useMemo(() => baseQuestionsFor(mode), [mode]);
+  const deck: Question[] = useMemo(() => {
+    const selected = ADAPTIVE_QUESTIONS.filter((candidate) =>
+      adaptiveIds.includes(candidate.id),
+    );
+    return [...baseDeck, ...selected];
+  }, [baseDeck, adaptiveIds]);
+  const deckRef = useRef(deck);
+  const allBaseAnswered = baseDeck.every((candidate) => picks[candidate.id]);
+
+  useEffect(() => {
+    if (stage !== "quiz" || !allBaseAnswered || adaptiveIds.length > 0) return;
+    const partialProfile = buildProfile(answersForBaseQuestions(mode, picks));
+    const selected = selectAdaptiveQuestions(
+      partialProfile,
+      mode === "quick" ? QUICK_ADAPTIVE_LIMIT : FULL_ADAPTIVE_LIMIT,
+    );
+    setAdaptiveIds(selected.map((candidate) => candidate.id));
+  }, [stage, allBaseAnswered, adaptiveIds.length, mode, picks]);
+
+  useEffect(() => {
+    deckRef.current = deck;
+  }, [deck]);
+
   const question = deck[Math.min(index, deck.length - 1)];
   const answered = deck.filter((q) => picks[q.id]).length;
   const progress = (answered / deck.length) * 100;
@@ -278,6 +313,7 @@ export default function App() {
     setMode(nextMode);
     setIndex(0);
     setPicks({});
+    setAdaptiveIds([]);
     setShowCompare(false);
     setCompareNames([]);
     setStage("quiz");
@@ -299,15 +335,16 @@ export default function App() {
     (opt: Option) => {
       cancelAdvance();
       setPicks((current) => ({ ...current, [question.id]: opt }));
-      // Keep the final answer on screen so it can be reviewed before reveal.
-      if (index + 1 < deck.length) {
-        advanceTimer.current = setTimeout(() => {
-          setIndex((current) => current + 1);
-          advanceTimer.current = null;
-        }, 140);
-      }
+      // Advance after the adaptive deck has had a chance to grow. The final
+      // question stays put so its answer can be reviewed before reveal.
+      advanceTimer.current = setTimeout(() => {
+        setIndex((current) =>
+          Math.min(current + 1, Math.max(0, deckRef.current.length - 1)),
+        );
+        advanceTimer.current = null;
+      }, 140);
     },
-    [cancelAdvance, question, index, deck.length],
+    [cancelAdvance, question],
   );
 
   useEffect(() => () => cancelAdvance(), [cancelAdvance]);
@@ -390,6 +427,7 @@ export default function App() {
     cancelAdvance();
     clearResultHash();
     setPicks({});
+    setAdaptiveIds([]);
     setIndex(0);
     setStage("intro");
     setShowCompare(false);
@@ -425,8 +463,9 @@ export default function App() {
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-amber-100/70">
             Questions about movies, games, villains and how you behave at board
-            game night. Zero questions about Magic: The Gathering. Your answers
-            get matched against a live EDHREC/Scryfall commander catalog.
+            game night. Zero questions about Magic: The Gathering. A few
+            adaptive tie-breakers appear based on your earlier answers, then
+            your reading is matched against 1,000 commanders.
           </p>
 
           <div className="mt-8 grid w-full max-w-2xl gap-3 sm:grid-cols-2">
@@ -442,7 +481,7 @@ export default function App() {
                 </span>
               </div>
               <div className="text-xs text-amber-100/60">
-                {QUESTIONS.length} questions · most accurate
+                {FULL_QUIZ_LENGTH} questions · adaptive tie-breakers
               </div>
             </button>
             <button
@@ -454,7 +493,7 @@ export default function App() {
                 Quick reading
               </div>
               <div className="text-xs text-amber-100/60">
-                {CORE_QUESTIONS.length} questions · about 2 minutes
+                {QUICK_QUIZ_LENGTH} questions · about 2 minutes
               </div>
             </button>
             <button
@@ -486,8 +525,8 @@ export default function App() {
               ],
               [
                 "🧭",
-                `${ARCHES.length} playstyle axes`,
-                "Tokens, graveyard, politics, stax, landfall — scored separately, not guessed.",
+                "Adaptive question v2",
+                "Twenty playstyles are rebalanced and a personalized tie-breaker separates close matches.",
               ],
               [
                 "🃏",
@@ -545,6 +584,11 @@ export default function App() {
           </div>
 
           <div key={question.id} className="animate-[fadeUp_.35s_ease-out]">
+            {question.kind === "adaptive" && (
+              <p className="mb-3 text-[11px] uppercase tracking-[0.22em] text-amber-200/60">
+                Adaptive tie-breaker
+              </p>
+            )}
             <h2 className="font-serif text-2xl leading-snug text-amber-50 sm:text-3xl">
               {question.prompt}
             </h2>
@@ -566,9 +610,20 @@ export default function App() {
                         : "border-white/10 bg-white/[0.04] hover:border-amber-200/35 hover:bg-white/[0.08]"
                     }`}
                   >
-                    <span className="text-xl leading-none">{opt.emoji}</span>
+                    {opt.art ? (
+                      <div className="relative h-16 w-12 shrink-0 overflow-hidden rounded-md border border-white/10 bg-black/30">
+                        <CardArt name={opt.art} />
+                      </div>
+                    ) : (
+                      <span className="text-xl leading-none">{opt.emoji}</span>
+                    )}
                     <span className="flex-1 text-[15px] leading-snug text-amber-50/90">
                       {opt.label}
+                      {opt.art && (
+                        <span className="mt-1 block text-[11px] text-amber-100/45">
+                          {opt.art}
+                        </span>
+                      )}
                     </span>
                     <span className="mt-0.5 hidden rounded border border-white/15 px-1.5 text-[10px] text-amber-100/40 sm:block">
                       {i + 1}

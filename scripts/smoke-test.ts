@@ -1,9 +1,27 @@
 import assert from "node:assert/strict";
-import type { Preferences } from "../src/types.ts";
+import type { Option, Preferences } from "../src/types.ts";
 import { DEFAULT_PREFERENCES } from "../src/types.ts";
-import { QUESTIONS } from "../src/data/questions.ts";
+import {
+  ADAPTIVE_QUESTIONS,
+  CONSTRAINT_QUESTIONS,
+  CORE_QUESTIONS,
+  QUESTIONS,
+  STRATEGY_QUESTIONS,
+} from "../src/data/questions.ts";
 import { CURATED_COMMANDERS } from "../src/data/commanders.ts";
-import { buildProfile, scoreCommanders } from "../src/lib/scoring.ts";
+import {
+  ARCHES,
+  buildProfile,
+  COLORS,
+  scoreCommanders,
+} from "../src/lib/scoring.ts";
+import {
+  buildActiveDeck,
+  encodingDeckFor,
+  FULL_QUIZ_LENGTH,
+  QUICK_QUIZ_LENGTH,
+  selectAdaptiveQuestions,
+} from "../src/lib/questions.ts";
 import {
   buildResultHash,
   buildShareUrl,
@@ -14,6 +32,7 @@ import {
   buildLiveCatalog,
   DEFAULT_CATALOG_PAGES,
   edhrecSlug,
+  inferArch,
   MAX_CATALOG_PAGES,
 } from "../src/lib/catalog.ts";
 
@@ -38,7 +57,7 @@ assert.deepEqual(parsed.preferences.mustHaveColors, ["G"]);
 assert.equal(parsed.preferences.maxBudget, 2);
 assert.match(
   buildShareUrl({ mode: "full", picks, preferences }, "https://example.com/app/"),
-  /#r=v1/,
+  /#r=v2/,
 );
 
 // Scoring exposes a breakdown, applies dealbreakers, and respects feedback.
@@ -436,5 +455,105 @@ assert.ok(
       "name" in identifier && identifier.name === "Partner B",
   ),
 );
+
+
+// Question v2: balanced coverage, deterministic adaptive decks, and clamped
+// negative dealbreaker weights.
+assert.equal(CORE_QUESTIONS.length, 8);
+assert.equal(CONSTRAINT_QUESTIONS.length, 4);
+assert.equal(STRATEGY_QUESTIONS.length, 4);
+assert.equal(ADAPTIVE_QUESTIONS.length, 8);
+assert.equal(FULL_QUIZ_LENGTH, 18);
+assert.equal(QUICK_QUIZ_LENGTH, 13);
+assert.equal(new Set(QUESTIONS.map((question) => question.id)).size, QUESTIONS.length);
+assert.equal(encodingDeckFor("full").length, QUESTIONS.length);
+assert.equal(
+  encodingDeckFor("quick").length,
+  CORE_QUESTIONS.length + CONSTRAINT_QUESTIONS.length + ADAPTIVE_QUESTIONS.length,
+);
+
+for (const arch of ARCHES) {
+  const total = QUESTIONS.reduce(
+    (sum, question) =>
+      sum +
+      question.options.reduce(
+        (optionSum, option) =>
+          optionSum + Math.max(0, option.w?.[arch] ?? 0),
+        0,
+      ),
+    0,
+  );
+  assert.ok(total >= 10, `${arch} has only ${total} total positive weight`);
+}
+const colorTotals = COLORS.map((color) =>
+  QUESTIONS.reduce(
+    (sum, question) =>
+      sum +
+      question.options.reduce(
+        (optionSum, option) =>
+          optionSum + Math.max(0, option.w?.[color] ?? 0),
+        0,
+      ),
+    0,
+  ),
+);
+assert.ok(Math.max(...colorTotals) - Math.min(...colorTotals) <= 15);
+
+const dealbreakerOption = QUESTIONS.find(
+  (question) => question.id === "dealbreaker",
+)!.options.find((option) => option.id === "no_lockdown")!;
+const clampedProfile = buildProfile([dealbreakerOption]);
+assert.equal(clampedProfile.arch.stax, 0);
+assert.ok(clampedProfile.arch.politics > 0);
+
+const spellProfile = buildProfile([
+  {
+    id: "synthetic-spells",
+    label: "Spells",
+    emoji: "✨",
+    w: { spells: 8, artifacts: 5, counters: 2 },
+  },
+] satisfies Option[]);
+const adaptiveQuestions = selectAdaptiveQuestions(spellProfile, 2);
+assert.equal(adaptiveQuestions.length, 2);
+assert.ok(
+  adaptiveQuestions.some(
+    (question) =>
+      question.targets?.includes("spells") ||
+      question.targets?.includes("artifacts"),
+  ),
+);
+const activeFullDeck = buildActiveDeck("full", {}, ["tie_spells", "tie_scale"]);
+assert.equal(activeFullDeck.length, FULL_QUIZ_LENGTH);
+assert.ok(activeFullDeck.slice(-2).some((question) => question.id === "tie_spells"));
+assert.ok(activeFullDeck.slice(-2).some((question) => question.id === "tie_scale"));
+
+// Improved generated-entry inference picks up spells, counters and type lines.
+const spellInference = inferArch(
+  "Whenever you cast an instant or sorcery spell, copy it. Prowess.",
+  "Legendary Creature — Human Wizard",
+  ["Prowess"],
+  ["U", "R"],
+  3,
+);
+assert.ok((spellInference.spells ?? 0) > 0);
+const counterInference = inferArch(
+  "Whenever a +1/+1 counter is put on a creature you control, proliferate. Partner.",
+  "Legendary Creature — Elf Warrior",
+  ["Partner"],
+  ["G", "W"],
+  3,
+);
+assert.ok((counterInference.counters ?? 0) > 0);
+assert.ok((counterInference.kindred ?? 0) > 0);
+const genericInference = inferArch(
+  "Draw a card.",
+  "Legendary Creature — Human Warrior",
+  [],
+  ["W"],
+  3,
+);
+assert.equal(genericInference.kindred ?? 0, 0);
+assert.ok((genericInference.value ?? 0) > 0);
 
 console.log("Smoke tests passed");

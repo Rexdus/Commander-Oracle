@@ -7,11 +7,13 @@ import type {
   Preferences,
 } from "../types";
 import { DEFAULT_PREFERENCES } from "../types";
-import { CORE_QUESTIONS, QUESTIONS } from "../data/questions";
+import { encodingDeckFor, type QuizMode } from "./questions";
 import { ARCHES, COLORS } from "./scoring";
 
-export type ShareMode = "quick" | "full";
-const VERSION = "v1";
+export type ShareMode = QuizMode;
+// v2 changes the question bank and adaptive deck encoding; old links are not
+// compatible and are intentionally ignored.
+const VERSION = "v2";
 
 export interface SharedResult {
   mode: ShareMode;
@@ -25,7 +27,7 @@ export interface ResultShareState extends SharedResult {
 }
 
 function deckFor(mode: ShareMode) {
-  return mode === "quick" ? CORE_QUESTIONS : QUESTIONS;
+  return encodingDeckFor(mode);
 }
 
 function base64UrlEncode(value: string): string {
