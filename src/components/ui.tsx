@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import type { ColorKey } from "../types";
-import { COLOR_META } from "../lib/scoring";
+import { artUrl, COLOR_META } from "../lib/scoring";
 
 const PIP_GLYPH: Record<ColorKey, string> = {
   W: "☀",
@@ -67,6 +68,29 @@ export function PipRow({
         <ManaPip key={c} color={c} size={size} />
       ))}
     </span>
+  );
+}
+
+export function CardArt({ name }: { name: string }) {
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => setFailed(false), [name]);
+
+  if (failed) {
+    return (
+      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-violet-900/50 to-slate-900 text-5xl">
+        ✦
+      </div>
+    );
+  }
+  return (
+    <img
+      src={artUrl(name, "art_crop")}
+      alt={`Card art for ${name}`}
+      loading="lazy"
+      onError={() => setFailed(true)}
+      className="h-full w-full object-cover"
+    />
   );
 }
 

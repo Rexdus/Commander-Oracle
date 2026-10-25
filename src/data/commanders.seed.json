@@ -1,0 +1,3111 @@
+[
+  {
+    "name": "Y'shtola, Night's Blessed",
+    "rank": 1,
+    "colors": [
+      "W",
+      "U",
+      "B"
+    ],
+    "arch": {
+      "spells": 3,
+      "lifegain": 3,
+      "value": 2,
+      "control": 1,
+      "combo": 1
+    },
+    "tagline": "Quiet healer, relentless bookkeeper",
+    "blurb": "Every meaningful spell you cast pings the whole table and heals you, and every big life swing refills your hand. Gentle on the surface, mathematically brutal underneath.",
+    "plan": "Cast midsize noncreature spells, drain the table two at a time, draw off the carnage.",
+    "youAre": "Caring but calculating. You take care of people and also keep a very accurate ledger.",
+    "media": [
+      "Final Fantasy XIV",
+      "Arcane",
+      "Slow-burn fantasy novels"
+    ],
+    "franchise": "ff",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Drain",
+      "Spellslinger",
+      "Lifegain"
+    ]
+  },
+  {
+    "name": "Edgar Markov",
+    "rank": 2,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "kindred": 3,
+      "tokens": 3,
+      "aggro": 3,
+      "counters": 1
+    },
+    "tagline": "An aristocratic vampire family, arriving all at once",
+    "blurb": "Every vampire you cast makes another vampire from the command zone, and attacking pumps them all. One of the most relentless starts in the format.",
+    "plan": "Flood the board with vampires, pump the team, attack every single turn.",
+    "youAre": "Stylish, proud, and dangerously committed to a theme. Half the joy is the aesthetic.",
+    "media": [
+      "Interview with the Vampire",
+      "Castlevania",
+      "What We Do in the Shadows"
+    ],
+    "difficulty": 2,
+    "budget": "$$$",
+    "tags": [
+      "Vampires",
+      "Go-wide",
+      "Aggro"
+    ]
+  },
+  {
+    "name": "The Ur-Dragon",
+    "rank": 3,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "bigstuff": 3,
+      "value": 2,
+      "aggro": 2
+    },
+    "tagline": "Every dragon you've ever wanted, in one deck",
+    "blurb": "Dragons cost less, attacking draws a fistful of cards, and you get to drop free permanents out of hand. Expensive, enormous, exactly as cool as it sounds.",
+    "plan": "Ramp hard, cast dragons at a discount, attack with a flying apocalypse.",
+    "youAre": "A big-dream player. If you're going to do a thing, do it at full scale.",
+    "media": [
+      "How to Train Your Dragon",
+      "Skyrim",
+      "Game of Thrones"
+    ],
+    "difficulty": 3,
+    "budget": "$$$",
+    "tags": [
+      "Dragons",
+      "Five color",
+      "Ramp"
+    ]
+  },
+  {
+    "name": "Atraxa, Praetors' Voice",
+    "rank": 4,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "counters": 3,
+      "value": 2,
+      "control": 2,
+      "lifegain": 1
+    },
+    "tagline": "Everything good gets a little better each turn",
+    "blurb": "Proliferate every end step: counters on creatures, loyalty on planeswalkers, poison on opponents. A quiet compounding nightmare with four keywords stapled on.",
+    "plan": "Put counters on everything, proliferate them, snowball into inevitability.",
+    "youAre": "Long-game, incremental, and deeply satisfied by a number that keeps going up.",
+    "media": [
+      "Dune",
+      "Civilization",
+      "Evangelion"
+    ],
+    "difficulty": 3,
+    "budget": "$$$",
+    "tags": [
+      "Counters",
+      "Proliferate",
+      "Midrange"
+    ]
+  },
+  {
+    "name": "Krenko, Mob Boss",
+    "rank": 5,
+    "colors": [
+      "R"
+    ],
+    "arch": {
+      "kindred": 3,
+      "tokens": 3,
+      "aggro": 3
+    },
+    "tagline": "One goblin, then a thousand goblins",
+    "blurb": "The math is simple and horrifying: tap Krenko, double the goblins, swing. Nobody has ever needed a strategy guide for this.",
+    "plan": "Make goblins exponentially, then throw all of them at someone's face.",
+    "youAre": "Enthusiastic, loud, allergic to subtlety. The plan is the plan and the plan is great.",
+    "media": [
+      "Mad Max: Fury Road",
+      "Total War",
+      "Gremlins"
+    ],
+    "difficulty": 1,
+    "budget": "$",
+    "tags": [
+      "Goblins",
+      "Tokens",
+      "Explosive"
+    ]
+  },
+  {
+    "name": "Vivi Ornitier",
+    "rank": 6,
+    "colors": [
+      "U",
+      "R"
+    ],
+    "arch": {
+      "spells": 3,
+      "combo": 2,
+      "counters": 2,
+      "aggro": 1
+    },
+    "tagline": "A small black mage with a frightening mana bill",
+    "blurb": "Every noncreature spell grows Vivi and burns the table, and Vivi taps for mana equal to his own power. Start small, end the turn casting your whole hand.",
+    "plan": "Chain cheap spells, grow Vivi, convert him into a mana engine and a win condition.",
+    "youAre": "Shy, curious, and secretly the most dangerous person at the table once warmed up.",
+    "media": [
+      "Final Fantasy IX",
+      "Hades",
+      "Studio Ghibli"
+    ],
+    "franchise": "ff",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Spellslinger",
+      "Storm-ish",
+      "Burn"
+    ]
+  },
+  {
+    "name": "Sauron, the Dark Lord",
+    "rank": 7,
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "value": 3,
+      "control": 2,
+      "tokens": 2,
+      "theft": 1,
+      "aggro": 1
+    },
+    "tagline": "The eye that punishes you for casting spells",
+    "blurb": "Every time an opponent does anything, your army grows. Connect once and you get to throw away your hand for four fresh cards. Patient, oppressive, thematic.",
+    "plan": "Amass an army off opponents' spells, tempt the Ring, refill and grind them down.",
+    "youAre": "Strategically patient and faintly menacing. You like being the problem on the board.",
+    "media": [
+      "The Lord of the Rings",
+      "Crusader Kings",
+      "Dune"
+    ],
+    "franchise": "lotr",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Army tokens",
+      "Card advantage",
+      "Menace"
+    ]
+  },
+  {
+    "name": "Kaalia of the Vast",
+    "rank": 8,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "bigstuff": 3,
+      "aggro": 3,
+      "kindred": 2,
+      "voltron": 1
+    },
+    "tagline": "Cheat the biggest things in the game into combat",
+    "blurb": "Attack and an Angel, Demon or Dragon slams onto the battlefield attacking, for free. Everyone at the table immediately agrees you must be dealt with.",
+    "plan": "Protect Kaalia, attack once, drop a 7-drop into combat and repeat.",
+    "youAre": "Impatient with the boring middle part. You want the good stuff on turn four.",
+    "media": [
+      "Diablo",
+      "Paradise Lost",
+      "Bayonetta"
+    ],
+    "difficulty": 2,
+    "budget": "$$$",
+    "tags": [
+      "Angels/Demons/Dragons",
+      "Cheat into play",
+      "Haymaker"
+    ]
+  },
+  {
+    "name": "Teval, the Balanced Scale",
+    "rank": 9,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "graveyard": 3,
+      "lands": 2,
+      "tokens": 2,
+      "value": 2
+    },
+    "tagline": "Your graveyard is a renewable resource",
+    "blurb": "Attack, mill yourself, return a land, make a zombie — and every other card that leaves your graveyard makes another one. Self-destruction as an economy.",
+    "plan": "Mill yourself on purpose, recur lands and creatures, build a zombie army from scraps.",
+    "youAre": "A composter. Nothing is waste if you're patient enough to turn it over.",
+    "media": [
+      "Annihilation",
+      "The Last of Us",
+      "Hollow Knight"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Self-mill",
+      "Lands",
+      "Zombies"
+    ]
+  },
+  {
+    "name": "Fire Lord Azula",
+    "rank": 10,
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "spells": 3,
+      "combo": 2,
+      "aggro": 2,
+      "chaos": 1
+    },
+    "tagline": "Perfectionist, prodigy, copies everything",
+    "blurb": "Attack and every spell you cast gets copied, with extra red mana thrown in to fund it. Terrifying ceiling, zero chill, exactly on brand.",
+    "plan": "Swing, then duplicate your best spells mid-combat for an unanswerable turn.",
+    "youAre": "Brilliant, exacting, and competitive in a way your friends gently tease you about.",
+    "media": [
+      "Avatar: The Last Airbender",
+      "Whiplash",
+      "Black Swan"
+    ],
+    "franchise": "avatar",
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Spell copy",
+      "Combat",
+      "Burn"
+    ]
+  },
+  {
+    "name": "Giada, Font of Hope",
+    "rank": 11,
+    "colors": [
+      "W"
+    ],
+    "arch": {
+      "kindred": 3,
+      "counters": 2,
+      "aggro": 2,
+      "bigstuff": 1
+    },
+    "tagline": "A choir of angels, arriving on schedule",
+    "blurb": "One clean idea executed beautifully: play angels, each one lands bigger than the last, fly over everything. Looks like a cathedral, hits like a truck.",
+    "plan": "Flood the sky with angels that grow every time another one arrives.",
+    "youAre": "Orderly, loyal and a little theatrical. You like a plan everyone sees coming and still can't stop.",
+    "media": [
+      "Lord of the Rings",
+      "Final Fantasy",
+      "Choir-core soundtracks"
+    ],
+    "difficulty": 1,
+    "budget": "$$",
+    "tags": [
+      "Angels",
+      "Flying",
+      "Counters"
+    ]
+  },
+  {
+    "name": "Pantlaza, Sun-Favored",
+    "rank": 12,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "kindred": 3,
+      "bigstuff": 2,
+      "value": 3,
+      "aggro": 2
+    },
+    "tagline": "Every dinosaur you play finds another free card",
+    "blurb": "Each dinosaur that lands digs into your deck and casts something for free. It's tribal beatdown with an actual card-advantage engine bolted on.",
+    "plan": "Play big dinosaurs, discover into more dinosaurs, trample over everyone.",
+    "youAre": "Earnest and enthusiastic. You like a plan that pays you for sticking to it.",
+    "media": [
+      "Jurassic Park",
+      "Monster Hunter",
+      "Ark: Survival Evolved"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Dinosaurs",
+      "Discover",
+      "Value beats"
+    ]
+  },
+  {
+    "name": "Ms. Bumbleflower",
+    "rank": 13,
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "politics": 3,
+      "counters": 2,
+      "value": 2,
+      "spells": 2
+    },
+    "tagline": "Aggressively nice, quietly unstoppable",
+    "blurb": "Every spell gives an opponent a card and grows one of yours. You become everyone's favourite player and then win because you drew eleven cards doing it.",
+    "plan": "Give gifts, grow fliers, double-dip every turn for extra draws.",
+    "youAre": "Genuinely kind at the table. Also, somehow, always in the lead.",
+    "media": [
+      "Paddington",
+      "Animal Crossing",
+      "The Great British Bake Off"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Group hug",
+      "Counters",
+      "Flying"
+    ]
+  },
+  {
+    "name": "Lathril, Blade of the Elves",
+    "rank": 14,
+    "colors": [
+      "B",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "tokens": 3,
+      "aggro": 2,
+      "lifegain": 1
+    },
+    "tagline": "Ten elves walk into a bar; everyone loses ten life",
+    "blurb": "Build an elf army, connect once for more elves, then tap ten of them to drain the whole table. Tribal loyalty with a knife behind the back.",
+    "plan": "Swarm with elves, then convert the army into massive simultaneous drain.",
+    "youAre": "Community-minded with an edge. You like belonging to something, and winning with it.",
+    "media": [
+      "The Witcher",
+      "Elden Ring",
+      "Dark fantasy novels"
+    ],
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Elves",
+      "Tokens",
+      "Drain"
+    ]
+  },
+  {
+    "name": "Toph, the First Metalbender",
+    "rank": 15,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "lands": 3,
+      "counters": 2,
+      "aggro": 1
+    },
+    "tagline": "Your artifacts are lands and your lands are monsters",
+    "blurb": "A genuinely weird text box: the inanimate stuff you own becomes terrain, and the terrain gets up and attacks. Strange, resilient and extremely fun to pilot.",
+    "plan": "Turn artifacts into lands, earthbend lands into creatures, attack with the floor.",
+    "youAre": "Stubborn, inventive, and completely uninterested in the normal way of doing things.",
+    "media": [
+      "Avatar: The Last Airbender",
+      "Minecraft",
+      "Terraria"
+    ],
+    "franchise": "avatar",
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Lands matter",
+      "Artifacts",
+      "Counters"
+    ]
+  },
+  {
+    "name": "The Wise Mothman",
+    "rank": 16,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "graveyard": 3,
+      "counters": 3,
+      "value": 2,
+      "chaos": 1
+    },
+    "tagline": "Irradiate everyone and see what grows",
+    "blurb": "You hand out rad counters that slowly mill your opponents, and every mill trigger pumps your team. A creepy, friendly, very original engine.",
+    "plan": "Spread rad counters, mill the table, convert milling into +1/+1 counters.",
+    "youAre": "Drawn to the strange. You'd absolutely pull over for a roadside cryptid museum.",
+    "media": [
+      "Fallout",
+      "The X-Files",
+      "Annihilation"
+    ],
+    "franchise": "fallout",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Rad counters",
+      "Mill",
+      "Counters"
+    ]
+  },
+  {
+    "name": "Jodah, the Unifier",
+    "rank": 17,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "value": 3,
+      "kindred": 2,
+      "bigstuff": 2,
+      "combo": 1
+    },
+    "tagline": "A deck made entirely of main characters",
+    "blurb": "Every legend you cast cascades into another legend, and they all pump each other. It's a crossover event with a mana base.",
+    "plan": "Cast legendary creatures, chain free ones off the top, swing with a superteam.",
+    "youAre": "A collector of favourites. Your playlist, bookshelf and deck are all greatest hits.",
+    "media": [
+      "Avengers",
+      "Smash Bros.",
+      "Super-group albums"
+    ],
+    "difficulty": 3,
+    "budget": "$$$",
+    "tags": [
+      "Legends",
+      "Free spells",
+      "Five color"
+    ]
+  },
+  {
+    "name": "Cloud, Ex-SOLDIER",
+    "rank": 18,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "voltron": 3,
+      "artifacts": 2,
+      "aggro": 3,
+      "value": 1
+    },
+    "tagline": "One hero, one absurdly large sword",
+    "blurb": "Equipment attaches itself, attacking draws cards for every equipped creature, and if Cloud gets big enough you get paid in treasure too.",
+    "plan": "Suit up a single hero, attack, draw cards, repeat until someone is dead.",
+    "youAre": "A min-maxer with a favourite character. You build one thing and you build it perfectly.",
+    "media": [
+      "Final Fantasy VII",
+      "Monster Hunter",
+      "Kill Bill"
+    ],
+    "franchise": "ff",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Equipment",
+      "Voltron",
+      "Combat draw"
+    ]
+  },
+  {
+    "name": "Hearthhull, the Worldseed",
+    "rank": 19,
+    "colors": [
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "lands": 3,
+      "value": 3,
+      "sacrifice": 2,
+      "artifacts": 2
+    },
+    "tagline": "A spaceship that eats the planet for fuel",
+    "blurb": "Sacrifice lands to draw cards and play more lands, and once it's fully crewed it's a flying 6/7 that pays you for the destruction.",
+    "plan": "Sacrifice and replay lands for cards, then launch a huge flying engine.",
+    "youAre": "A tinkerer with no sentimentality. Everything is raw material for the next thing.",
+    "media": [
+      "Firefly",
+      "No Man's Sky",
+      "Mad Max"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Lands",
+      "Sacrifice",
+      "Spacecraft"
+    ]
+  },
+  {
+    "name": "Nekusar, the Mindrazer",
+    "rank": 20,
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "chaos": 2,
+      "control": 2,
+      "combo": 2,
+      "spells": 2,
+      "politics": 1
+    },
+    "tagline": "Here, everyone draw cards. (That's the trap.)",
+    "blurb": "You hand out cards and charge admission in life. Wheels, discard and punishment turn generosity into a weapon.",
+    "plan": "Force everyone to draw while every draw hurts them, then wheel until they're gone.",
+    "youAre": "Mischievous and a little villainous. You enjoy a gift with strings attached.",
+    "media": [
+      "Saw",
+      "The Joker",
+      "Squid Game"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Wheels",
+      "Group slug",
+      "Punisher"
+    ]
+  },
+  {
+    "name": "Kefka, Court Mage",
+    "rank": 21,
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "chaos": 3,
+      "value": 2,
+      "control": 2,
+      "graveyard": 1
+    },
+    "tagline": "The clown who actually wins",
+    "blurb": "Everyone discards, you draw for the variety, and eventually he flips into a flying nightmare that makes everyone sacrifice things. Pure gleeful malice.",
+    "plan": "Strip hands, profit off the discards, transform and end the world.",
+    "youAre": "The friend who laughs during the disaster. Chaos, but with a plan underneath.",
+    "media": [
+      "Final Fantasy VI",
+      "The Joker",
+      "Hellsing"
+    ],
+    "franchise": "ff",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Discard",
+      "Chaos",
+      "Transform"
+    ]
+  },
+  {
+    "name": "Kenrith, the Returned King",
+    "rank": 22,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "politics": 3,
+      "value": 2,
+      "control": 1,
+      "lifegain": 1
+    },
+    "tagline": "A king who grants favors — for a price",
+    "blurb": "Kenrith can give any player cards, life, trample or a reanimated creature. Every ability is a negotiation and you're holding the bank.",
+    "plan": "Ramp into all five colors and trade favors until the table owes you the game.",
+    "youAre": "A natural diplomat. Your real deck is the other three players.",
+    "media": [
+      "The West Wing",
+      "Diplomacy",
+      "Arthurian legend"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Politics",
+      "Five color",
+      "Toolbox"
+    ]
+  },
+  {
+    "name": "Sephiroth, Fabled SOLDIER",
+    "rank": 23,
+    "colors": [
+      "B"
+    ],
+    "arch": {
+      "sacrifice": 3,
+      "lifegain": 2,
+      "value": 2,
+      "aggro": 1
+    },
+    "tagline": "Every death is a small deposit",
+    "blurb": "Feed him creatures for cards, drain a life each time anything dies, and on the fourth death in a turn he becomes a one-winged flying disaster.",
+    "plan": "Sacrifice relentlessly, drain the table, flip into a finisher.",
+    "youAre": "Cool, composed, and running a plan you decided on a long time ago.",
+    "media": [
+      "Final Fantasy VII",
+      "Death Note",
+      "Berserk"
+    ],
+    "franchise": "ff",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Aristocrats",
+      "Drain",
+      "Transform"
+    ]
+  },
+  {
+    "name": "Yuriko, the Tiger's Shadow",
+    "rank": 24,
+    "colors": [
+      "U",
+      "B"
+    ],
+    "arch": {
+      "aggro": 3,
+      "combo": 2,
+      "control": 1,
+      "theft": 1
+    },
+    "tagline": "The knife you never saw",
+    "blurb": "Cheap unblockable creatures bounce in and out while Yuriko flips cards off the top and drains everyone. Quiet, cheap, lethal.",
+    "plan": "Sneak ninjas through, flip expensive cards off the top, drain the whole table at once.",
+    "youAre": "Patient and precise. You'd rather be underestimated for nine turns and inevitable on the tenth.",
+    "media": [
+      "John Wick",
+      "Ghost in the Shell",
+      "Hitman"
+    ],
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Ninjas",
+      "Evasion",
+      "Burst damage"
+    ]
+  },
+  {
+    "name": "Isshin, Two Heavens as One",
+    "rank": 25,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "aggro": 3,
+      "tokens": 2,
+      "value": 2
+    },
+    "tagline": "If it triggers on attack, it triggers twice",
+    "blurb": "A deceptively simple text box that doubles everything good about attacking. Combat becomes a snowball nobody can afford to let roll.",
+    "plan": "Double every attack trigger and convert combat into overwhelming advantage.",
+    "youAre": "Decisive and forward-leaning. You believe pressure solves most problems.",
+    "media": [
+      "Samurai Champloo",
+      "Ghost of Tsushima",
+      "Gladiator"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Attack triggers",
+      "Combat",
+      "Aggro"
+    ]
+  },
+  {
+    "name": "Baylen, the Haymaker",
+    "rank": 26,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "tokens": 3,
+      "counters": 2,
+      "value": 2,
+      "aggro": 2
+    },
+    "tagline": "A hundred tiny friends, each one a resource",
+    "blurb": "Tokens aren't just bodies — tap them for mana, tap them for cards, tap them to make Baylen enormous. A token deck that never runs out of things to do.",
+    "plan": "Make many small tokens, convert them into mana, cards and a lethal swing.",
+    "youAre": "A small-wins optimizer. You get genuine joy out of an efficient little system.",
+    "media": [
+      "Stardew Valley",
+      "Pikmin",
+      "Factorio"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Tokens",
+      "Convoke-ish",
+      "Value"
+    ]
+  },
+  {
+    "name": "Valgavoth, Harrower of Souls",
+    "rank": 27,
+    "colors": [
+      "B",
+      "R"
+    ],
+    "arch": {
+      "value": 3,
+      "counters": 2,
+      "aggro": 2,
+      "sacrifice": 1
+    },
+    "tagline": "Every scratch anyone takes feeds the demon",
+    "blurb": "The first time each opponent loses life on their own turn, you grow and draw. Build a board that bleeds people passively and the cards never stop.",
+    "plan": "Make opponents lose life constantly, draw a card every time, attack with a huge flier.",
+    "youAre": "Patient and a bit sinister. You profit from other people's small mistakes.",
+    "media": [
+      "Hellraiser",
+      "Dark Souls",
+      "Gothic horror"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Demon",
+      "Card draw",
+      "Punisher"
+    ]
+  },
+  {
+    "name": "Miirym, Sentinel Wyrm",
+    "rank": 28,
+    "colors": [
+      "U",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "bigstuff": 3,
+      "tokens": 2,
+      "value": 1
+    },
+    "tagline": "Every dragon arrives with a twin",
+    "blurb": "Each nontoken dragon you play makes a copy of itself. The board goes from manageable to apocalyptic in roughly one turn cycle.",
+    "plan": "Ramp into dragons, double each one on arrival, attack with the sky.",
+    "youAre": "A maximalist. 'Why one?' is a question you've genuinely never asked.",
+    "media": [
+      "Game of Thrones",
+      "Skyrim",
+      "Reign of Fire"
+    ],
+    "difficulty": 3,
+    "budget": "$$$",
+    "tags": [
+      "Dragons",
+      "Token copies",
+      "Ramp"
+    ]
+  },
+  {
+    "name": "Chatterfang, Squirrel General",
+    "rank": 29,
+    "colors": [
+      "B",
+      "G"
+    ],
+    "arch": {
+      "tokens": 3,
+      "kindred": 2,
+      "sacrifice": 2,
+      "combo": 2
+    },
+    "tagline": "All of your tokens come with squirrels",
+    "blurb": "Any token you'd make, you make squirrels too — and then you can eat the squirrels to kill things. Adorable, extremely degenerate.",
+    "plan": "Double every token into squirrels, then sacrifice them for profit and removal.",
+    "youAre": "Cute exterior, ruthless interior. Nobody expects the squirrels.",
+    "media": [
+      "Over the Garden Wall",
+      "Redwall",
+      "Stardew Valley"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Squirrels",
+      "Tokens",
+      "Sacrifice"
+    ]
+  },
+  {
+    "name": "Ulalek, Fused Atrocity",
+    "rank": 30,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "combo": 3,
+      "bigstuff": 3,
+      "kindred": 2,
+      "chaos": 1
+    },
+    "tagline": "Copy every spell and every ability. All of them.",
+    "blurb": "Cast an Eldrazi, pay two, and everything you control happens twice. It's the most unreasonable text box in the top 100 and it knows it.",
+    "plan": "Ramp into Eldrazi, then duplicate your entire turn in one trigger.",
+    "youAre": "You want the biggest possible turn. Half-measures are offensive to you.",
+    "media": [
+      "Lovecraft",
+      "Interstellar",
+      "Katamari Damacy"
+    ],
+    "difficulty": 5,
+    "budget": "$$$",
+    "tags": [
+      "Eldrazi",
+      "Spell copy",
+      "Big mana"
+    ]
+  },
+  {
+    "name": "Hashaton, Scarab's Fist",
+    "rank": 31,
+    "colors": [
+      "W",
+      "U",
+      "B"
+    ],
+    "arch": {
+      "graveyard": 3,
+      "tokens": 3,
+      "combo": 2,
+      "value": 2
+    },
+    "tagline": "Discard a monster, get a 4/4 copy of it",
+    "blurb": "Throwing away your best creature is now the cheapest way to cast it. A reanimator deck that never actually has to reanimate anything.",
+    "plan": "Loot aggressively, discard huge creatures, make zombie copies of them for cheap.",
+    "youAre": "An efficiency obsessive. You found the shortcut and the shortcut is better.",
+    "media": [
+      "The Mummy",
+      "Inception",
+      "Sandman"
+    ],
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Discard outlet",
+      "Zombies",
+      "Reanimator"
+    ]
+  },
+  {
+    "name": "Frodo, Adventurous Hobbit",
+    "rank": 32,
+    "colors": [
+      "W",
+      "B"
+    ],
+    "arch": {
+      "lifegain": 3,
+      "value": 2,
+      "aggro": 1,
+      "politics": 1
+    },
+    "tagline": "A small, determined person carrying something awful",
+    "blurb": "Gain life, become the Ring-bearer, draw cards, and let Sam quietly make treasure in the background. Underdog energy, genuinely strong engine.",
+    "plan": "Gain life every turn, tempt the Ring, grind out cards and sneak damage through.",
+    "youAre": "Humble and stubborn. You finish things other people would have quit.",
+    "media": [
+      "The Lord of the Rings",
+      "Hobbit cottagecore",
+      "Long walks"
+    ],
+    "franchise": "lotr",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Lifegain",
+      "The Ring",
+      "Partner"
+    ]
+  },
+  {
+    "name": "Ashling, the Limitless",
+    "rank": 33,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "sacrifice": 2,
+      "value": 3,
+      "combo": 1
+    },
+    "tagline": "Elementals that die, come back as copies, and keep going",
+    "blurb": "Everything gains evoke, so you can cast your whole hand cheaply — and every sacrifice hands you a hasty copy instead. Wonderfully chaotic value.",
+    "plan": "Evoke elementals for cheap, convert their deaths into free hasty copies.",
+    "youAre": "Improvisational. You'd rather make five things happen than one perfect thing.",
+    "media": [
+      "Avatar: The Last Airbender",
+      "Spirited Away",
+      "Jazz"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Elementals",
+      "Evoke",
+      "Token copies"
+    ]
+  },
+  {
+    "name": "Esika, God of the Tree",
+    "rank": 34,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "kindred": 2,
+      "value": 3,
+      "bigstuff": 2,
+      "lands": 2
+    },
+    "tagline": "Free legends off the top, every single upkeep",
+    "blurb": "The back half, The Prismatic Bridge, puts a free creature or planeswalker into play each turn. The front half turns your legends into mana. Both are great.",
+    "plan": "Cast the Bridge, cheat a legend into play every upkeep, build an unfair board.",
+    "youAre": "You like inevitability. Give you a few turns and the game is simply decided.",
+    "media": [
+      "Norse mythology",
+      "Horizon Zero Dawn",
+      "The Green Knight"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Legends",
+      "Free cheats",
+      "Five color"
+    ]
+  },
+  {
+    "name": "Bello, Bard of the Brambles",
+    "rank": 35,
+    "colors": [
+      "R",
+      "G"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "aggro": 3,
+      "value": 2,
+      "enchant": 2
+    },
+    "tagline": "Your furniture gets up and fights",
+    "blurb": "Every big artifact and enchantment you own becomes an indestructible hasty 4/4 that draws cards when it connects. Your noncreature spells are the beatdown.",
+    "plan": "Play chunky artifacts and enchantments, animate them, swing with the scenery.",
+    "youAre": "A lateral thinker. You like solving the problem with a tool nobody considered a weapon.",
+    "media": [
+      "Over the Garden Wall",
+      "Howl's Moving Castle",
+      "Beauty and the Beast"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Animated permanents",
+      "Beatdown",
+      "Draw"
+    ]
+  },
+  {
+    "name": "Muldrotha, the Gravetide",
+    "rank": 36,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "graveyard": 3,
+      "value": 3,
+      "control": 2,
+      "lands": 1
+    },
+    "tagline": "Your graveyard is a second hand",
+    "blurb": "Each turn you may replay a permanent of each type from the graveyard. Nothing you lose is ever actually gone, which makes you impossible to grind out.",
+    "plan": "Self-mill, then replay permanents from the yard every turn until you simply have more.",
+    "youAre": "Persistent and a little bit of a hoarder. Losing things doesn't scare you.",
+    "media": [
+      "Annihilation",
+      "The Sandman",
+      "Dark"
+    ],
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Graveyard",
+      "Recursion",
+      "Value"
+    ]
+  },
+  {
+    "name": "Hakbal of the Surging Soul",
+    "rank": 37,
+    "colors": [
+      "G",
+      "U"
+    ],
+    "arch": {
+      "kindred": 3,
+      "counters": 2,
+      "value": 2,
+      "lands": 2
+    },
+    "tagline": "A school of merfolk, exploring every turn",
+    "blurb": "Each combat, every merfolk you control explores — free lands, free counters, free selection. Cheap, consistent and extremely satisfying.",
+    "plan": "Build a merfolk board, explore every turn, ride the accumulated counters in.",
+    "youAre": "Curious and methodical. You open every chest and read every sign.",
+    "media": [
+      "Subnautica",
+      "Moana",
+      "Blue Planet"
+    ],
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Merfolk",
+      "Explore",
+      "Counters"
+    ]
+  },
+  {
+    "name": "Rin and Seri, Inseparable",
+    "rank": 38,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "kindred": 3,
+      "tokens": 3,
+      "lifegain": 1,
+      "aggro": 1
+    },
+    "tagline": "Literally just dogs and cats",
+    "blurb": "Cast a dog, get a cat. Cast a cat, get a dog. Then point the whole menagerie at someone's face. The sweetest deck that still kills people.",
+    "plan": "Alternate dogs and cats for free tokens, then burn the table with the whole pack.",
+    "youAre": "Wholesome and sociable. You're here for the vibes and also to win, politely.",
+    "media": [
+      "Animal Crossing",
+      "Isle of Dogs",
+      "Okami"
+    ],
+    "difficulty": 1,
+    "budget": "$$",
+    "tags": [
+      "Dogs & Cats",
+      "Tokens",
+      "Wholesome"
+    ]
+  },
+  {
+    "name": "Glarb, Calamity's Augur",
+    "rank": 39,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "value": 3,
+      "control": 2,
+      "graveyard": 2,
+      "bigstuff": 1
+    },
+    "tagline": "A frog who already knows how this ends",
+    "blurb": "See the top card always, play lands and expensive spells straight off your library, and surveil to fix what's coming. Card advantage without drawing cards.",
+    "plan": "Set up the top of your deck, cast everything from the library, never run out.",
+    "youAre": "A planner. You read the ending first and you're not sorry about it.",
+    "media": [
+      "Minority Report",
+      "Dune",
+      "Chess"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Top-of-library",
+      "Surveil",
+      "Value"
+    ]
+  },
+  {
+    "name": "Animar, Soul of Elements",
+    "rank": 40,
+    "colors": [
+      "U",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "combo": 3,
+      "value": 2,
+      "bigstuff": 2,
+      "counters": 2
+    },
+    "tagline": "Creatures get cheaper until they're free",
+    "blurb": "Every creature you cast shrinks the next one. Eventually you're casting your whole deck and the table is politely asking you to stop.",
+    "plan": "Chain creatures at escalating discounts until you take an unreasonable turn.",
+    "youAre": "A combo-curious optimizer who loves a turn that doesn't end.",
+    "media": [
+      "Pokémon",
+      "Hades",
+      "Speedrun culture"
+    ],
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Creature combo",
+      "Cost reduction",
+      "Tempo"
+    ]
+  },
+  {
+    "name": "Maralen, Fae Ascendant",
+    "rank": 41,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "theft": 3,
+      "value": 2
+    },
+    "tagline": "Elves and faeries, casting other people's spells",
+    "blurb": "Each elf or faerie exiles cards off an opponent's library, and you get to cast them for free. The tribe is your army and their decks are your hand.",
+    "plan": "Build a wide elf-faerie board and play the table's cards instead of your own.",
+    "youAre": "Sly and charming. Borrowing isn't stealing if you give it back as damage.",
+    "media": [
+      "Labyrinth",
+      "Pan's Labyrinth",
+      "A Midsummer Night's Dream"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Elves & Faeries",
+      "Exile-cast",
+      "Theft"
+    ]
+  },
+  {
+    "name": "Arcades, the Strategist",
+    "rank": 42,
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "control": 3,
+      "value": 3,
+      "stax": 1,
+      "tokens": 1
+    },
+    "tagline": "Your walls attack. With their butts.",
+    "blurb": "Defenders deal damage with their toughness and can attack, and each one draws you a card. The most comfortable fortress in Magic.",
+    "plan": "Build an impenetrable wall of defenders, draw a card each time, then attack with the wall.",
+    "youAre": "Defensive by nature and secretly very patient. Let them come to you.",
+    "media": [
+      "Helm's Deep",
+      "They Are Billions",
+      "Tower defense games"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Defenders",
+      "Card draw",
+      "Fortress"
+    ]
+  },
+  {
+    "name": "Aragorn, the Uniter",
+    "rank": 43,
+    "colors": [
+      "R",
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "value": 3,
+      "tokens": 2,
+      "spells": 2,
+      "politics": 1,
+      "counters": 1
+    },
+    "tagline": "Every spell you cast does a second, better thing",
+    "blurb": "White makes soldiers, blue scrys, red burns, green pumps. Build a four-color pile of good cards and every single one over-performs.",
+    "plan": "Cast spells of every color and bank the bonus triggers into an unstoppable board.",
+    "youAre": "A natural leader who's good at a lot of things and modest about all of them.",
+    "media": [
+      "The Lord of the Rings",
+      "Mass Effect",
+      "Band of Brothers"
+    ],
+    "franchise": "lotr",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Four color",
+      "Value",
+      "Goodstuff"
+    ]
+  },
+  {
+    "name": "Kuja, Genome Sorcerer",
+    "rank": 44,
+    "colors": [
+      "B",
+      "R"
+    ],
+    "arch": {
+      "spells": 3,
+      "tokens": 2,
+      "combo": 2,
+      "aggro": 1
+    },
+    "tagline": "A vain sorcerer with a staff of wizards",
+    "blurb": "Make a wizard every end step; each one pings the table whenever you cast a noncreature spell. Four wizards later, Kuja flips and the burn goes exponential.",
+    "plan": "Build a wizard chorus, cast cheap spells, machine-gun the whole table.",
+    "youAre": "Dramatic and a bit of a show-off. Style points matter to you. They should.",
+    "media": [
+      "Final Fantasy IX",
+      "Hamilton",
+      "Opera villains"
+    ],
+    "franchise": "ff",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Wizards",
+      "Spellslinger",
+      "Burn"
+    ]
+  },
+  {
+    "name": "Mr. House, President and CEO",
+    "rank": 45,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "chaos": 3,
+      "artifacts": 2,
+      "tokens": 2,
+      "value": 2
+    },
+    "tagline": "The house always wins (statistically)",
+    "blurb": "Roll dice, make robots and treasure, spend the treasure to roll more dice. Gambling as an engine, with surprisingly consistent payouts.",
+    "plan": "Generate treasure, roll huge dice pools, flood the board with 3/3 robots.",
+    "youAre": "A calculated risk-taker. You love a gamble where you've quietly stacked the odds.",
+    "media": [
+      "Fallout: New Vegas",
+      "Casino",
+      "Dice-roller board games"
+    ],
+    "franchise": "fallout",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Dice",
+      "Treasure",
+      "Robots"
+    ]
+  },
+  {
+    "name": "Ygra, Eater of All",
+    "rank": 46,
+    "colors": [
+      "B",
+      "G"
+    ],
+    "arch": {
+      "sacrifice": 3,
+      "counters": 2,
+      "bigstuff": 2,
+      "combo": 2
+    },
+    "tagline": "Every creature on the board is now snacks",
+    "blurb": "Ygra turns all creatures — yours and theirs — into Food, which means everything can be eaten, and every meal makes Ygra bigger. Absurd and delightful.",
+    "plan": "Turn the whole board into Food, sacrifice it all, grow into something enormous.",
+    "youAre": "Gleefully greedy. You read a card and immediately look for the broken part.",
+    "media": [
+      "Studio Ghibli feasts",
+      "Monster Hunter",
+      "Hannibal (fondly)"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Food",
+      "Sacrifice",
+      "Counters"
+    ]
+  },
+  {
+    "name": "Caesar, Legion's Emperor",
+    "rank": 47,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "sacrifice": 3,
+      "tokens": 3,
+      "aggro": 3
+    },
+    "tagline": "The legion is expendable and that's the point",
+    "blurb": "Attack, feed a soldier to the machine, and pick two rewards: more soldiers, cards, or damage. A war engine that runs on its own troops.",
+    "plan": "Attack every turn, sacrifice tokens for value, snowball into a lethal army.",
+    "youAre": "Ruthlessly goal-oriented. Acceptable losses is a phrase you've used sincerely.",
+    "media": [
+      "Fallout: New Vegas",
+      "Rome",
+      "Starship Troopers"
+    ],
+    "franchise": "fallout",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Aristocrats",
+      "Tokens",
+      "Attack triggers"
+    ]
+  },
+  {
+    "name": "Wilhelt, the Rotcleaver",
+    "rank": 48,
+    "colors": [
+      "U",
+      "B"
+    ],
+    "arch": {
+      "kindred": 3,
+      "tokens": 3,
+      "sacrifice": 2,
+      "value": 2
+    },
+    "tagline": "The zombies keep coming back. That's the whole bit.",
+    "blurb": "Every zombie that dies leaves another zombie behind, and you can eat a zombie each turn for a card. A beginner-friendly engine that's genuinely strong.",
+    "plan": "Build a zombie horde that replaces itself, draw off the deaths, swarm in.",
+    "youAre": "Steady and unglamorous. You win with attrition and you're fine with that.",
+    "media": [
+      "The Walking Dead",
+      "Plants vs. Zombies",
+      "Night of the Living Dead"
+    ],
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Zombies",
+      "Tokens",
+      "Sacrifice"
+    ]
+  },
+  {
+    "name": "Flubs, the Fool",
+    "rank": 49,
+    "colors": [
+      "U",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "chaos": 3,
+      "value": 2,
+      "lands": 2,
+      "graveyard": 2
+    },
+    "tagline": "Empty your hand on purpose. It's a strategy. Honest.",
+    "blurb": "If your hand is empty when you play something, you draw. Otherwise you discard. It is an aggressively silly constraint that produces genuinely clever decks.",
+    "plan": "Dump your hand fast, then draw a card off everything you play.",
+    "youAre": "A puzzle person with a sense of humour. Constraints make you more creative.",
+    "media": [
+      "Kung Fu Hustle",
+      "Frog Detective",
+      "Improv comedy"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Empty hand",
+      "Discard",
+      "Extra lands"
+    ]
+  },
+  {
+    "name": "The Necrobloom",
+    "rank": 50,
+    "colors": [
+      "W",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "lands": 3,
+      "tokens": 3,
+      "graveyard": 2,
+      "value": 2
+    },
+    "tagline": "A garden growing out of the graveyard",
+    "blurb": "Every land makes a plant or a zombie, and the lands in your graveyard come back on their own. Lands-matter with a body count.",
+    "plan": "Play lands relentlessly, make a token every time, dredge the lands back.",
+    "youAre": "Patient and nurturing, with a slightly morbid streak. Compost is sacred to you.",
+    "media": [
+      "Annihilation",
+      "The Secret Garden",
+      "Terraria"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Landfall",
+      "Tokens",
+      "Dredge"
+    ]
+  },
+  {
+    "name": "Ureni of the Unwritten",
+    "rank": 51,
+    "colors": [
+      "U",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "bigstuff": 3,
+      "aggro": 2
+    },
+    "tagline": "A dragon that goes and gets more dragons",
+    "blurb": "Enters and attacks digging eight cards deep for a free dragon every time. Huge, trampling, and reliably unfair.",
+    "plan": "Ramp into Ureni, cheat extra dragons into play on every attack.",
+    "youAre": "Direct about wanting the biggest creatures. No notes, no apologies.",
+    "media": [
+      "Shadow of the Colossus",
+      "Dragon's Dogma",
+      "Pacific Rim"
+    ],
+    "difficulty": 2,
+    "budget": "$$$",
+    "tags": [
+      "Dragons",
+      "Cheat into play",
+      "Trample"
+    ]
+  },
+  {
+    "name": "Oloro, Ageless Ascetic",
+    "rank": 52,
+    "colors": [
+      "W",
+      "U",
+      "B"
+    ],
+    "arch": {
+      "lifegain": 3,
+      "control": 3,
+      "value": 2,
+      "politics": 1
+    },
+    "tagline": "Gains life from the command zone. Hasn't even cast him yet.",
+    "blurb": "Two life a turn whether he's on the battlefield or not, and every life gain converts into a card and a drain. The most relaxed control deck imaginable.",
+    "plan": "Gain life passively, convert it into cards and drain, win from behind a wall.",
+    "youAre": "Unhurried and unbothered. You trust that time is on your side.",
+    "media": [
+      "Severance",
+      "Slow cinema",
+      "Long baths"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Lifegain",
+      "Drain",
+      "Control"
+    ]
+  },
+  {
+    "name": "Breya, Etherium Shaper",
+    "rank": 53,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "combo": 3,
+      "value": 2,
+      "control": 1
+    },
+    "tagline": "Artifacts in, win conditions out",
+    "blurb": "A toolbox commander who turns a pile of metal into removal, drain, life or a sudden combo kill. Infinitely modular.",
+    "plan": "Build an artifact toolbox and assemble whichever combo the table can't answer.",
+    "youAre": "A tinkerer. You like options, modules and solving the board like a puzzle.",
+    "media": [
+      "Iron Man",
+      "Factorio",
+      "Hardware-hacking YouTube"
+    ],
+    "difficulty": 5,
+    "budget": "$$$",
+    "tags": [
+      "Artifacts",
+      "Toolbox",
+      "Combo"
+    ]
+  },
+  {
+    "name": "Meren of Clan Nel Toth",
+    "rank": 54,
+    "colors": [
+      "B",
+      "G"
+    ],
+    "arch": {
+      "graveyard": 3,
+      "sacrifice": 3,
+      "value": 3
+    },
+    "tagline": "Death is a doorway you keep propping open",
+    "blurb": "Creatures die, Meren brings them back, they die again on purpose. A warm, mossy engine of inevitability.",
+    "plan": "Sacrifice creatures for value and reanimate them for free, forever.",
+    "youAre": "Quietly relentless. You outlast people more than you out-muscle them.",
+    "media": [
+      "Pan's Labyrinth",
+      "Hollow Knight",
+      "Nordic folk horror"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Reanimator",
+      "Sacrifice",
+      "Grind"
+    ]
+  },
+  {
+    "name": "Tidus, Yuna's Guardian",
+    "rank": 55,
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "counters": 3,
+      "value": 2,
+      "aggro": 2,
+      "lifegain": 1
+    },
+    "tagline": "Move the counters around until someone's enormous",
+    "blurb": "Shuffle +1/+1 counters between your creatures, then get paid in cards and proliferate when they connect. Sunny, athletic, surprisingly technical.",
+    "plan": "Concentrate counters on an evasive creature, draw and proliferate every combat.",
+    "youAre": "Optimistic and team-oriented. You lift other people up, then ride the momentum.",
+    "media": [
+      "Final Fantasy X",
+      "Haikyuu!!",
+      "Summer sports movies"
+    ],
+    "franchise": "ff",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Counters",
+      "Proliferate",
+      "Combat"
+    ]
+  },
+  {
+    "name": "Kinnan, Bonder Prodigy",
+    "rank": 56,
+    "colors": [
+      "G",
+      "U"
+    ],
+    "arch": {
+      "combo": 3,
+      "lands": 2,
+      "bigstuff": 2,
+      "value": 2
+    },
+    "tagline": "Mana, but doubled, but also free monsters",
+    "blurb": "Every nonland mana source produces extra, and the ability digs out huge non-human creatures. One of the strongest two-color engines in the format.",
+    "plan": "Make absurd mana, dig out giant creatures, do it all a turn early.",
+    "youAre": "An optimizer. You get a real kick out of an efficiency that borders on cheating.",
+    "media": [
+      "Factorio",
+      "Speedrunning",
+      "Formula 1"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Big mana",
+      "Ramp",
+      "Combo"
+    ]
+  },
+  {
+    "name": "Teysa Karlov",
+    "rank": 57,
+    "colors": [
+      "W",
+      "B"
+    ],
+    "arch": {
+      "sacrifice": 3,
+      "tokens": 3,
+      "value": 2,
+      "lifegain": 1
+    },
+    "tagline": "Death is just a business transaction",
+    "blurb": "Your creatures are worth more dead than alive. Teysa doubles every death trigger, turning a small sacrifice into a funeral the whole table attends.",
+    "plan": "Sacrifice tokens for doubled death triggers and drain everyone out of the game.",
+    "youAre": "Organized, unsentimental and great at spreadsheets. Every loss is already priced in.",
+    "media": [
+      "Succession",
+      "The Godfather",
+      "Disco Elysium"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Aristocrats",
+      "Tokens",
+      "Drain"
+    ]
+  },
+  {
+    "name": "Zhulodok, Void Gorger",
+    "rank": 58,
+    "colors": [],
+    "arch": {
+      "bigstuff": 3,
+      "chaos": 2,
+      "kindred": 2,
+      "artifacts": 1
+    },
+    "tagline": "Colorless, gigantic, cascading into more gigantic things",
+    "blurb": "Every huge colorless spell cascades twice, meaning one Eldrazi turns into three. No colors at all, which makes the mana base refreshingly simple.",
+    "plan": "Ramp with artifacts, cast enormous Eldrazi, cascade into more enormous Eldrazi.",
+    "youAre": "Drawn to scale and strangeness. Subtlety was never on the menu.",
+    "media": [
+      "Lovecraft",
+      "Arrival",
+      "Shadow of the Colossus"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Eldrazi",
+      "Cascade",
+      "Colorless"
+    ]
+  },
+  {
+    "name": "Atla Palani, Nest Tender",
+    "rank": 59,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "chaos": 2,
+      "combo": 2,
+      "bigstuff": 3,
+      "tokens": 2,
+      "sacrifice": 2
+    },
+    "tagline": "Hatch an egg, get a random monster",
+    "blurb": "Make 0/1 eggs, break them, and reveal cards until a creature falls out onto the battlefield for free. Every egg is a lottery ticket you stacked.",
+    "plan": "Make eggs, sacrifice them, cheat enormous creatures into play out of nowhere.",
+    "youAre": "You like a surprise, as long as you built the surprise machine yourself.",
+    "media": [
+      "Jurassic Park",
+      "Pokémon eggs",
+      "Gacha games (ironically)"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Eggs",
+      "Cheat into play",
+      "Sacrifice"
+    ]
+  },
+  {
+    "name": "Zurgo Stormrender",
+    "rank": 60,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "tokens": 3,
+      "aggro": 3,
+      "value": 2,
+      "sacrifice": 2
+    },
+    "tagline": "Disposable soldiers, permanent advantage",
+    "blurb": "Mobilize makes free attackers that die at end of turn — and every token leaving the battlefield draws you a card or drains the table. Aggression with a safety net.",
+    "plan": "Attack with temporary tokens, cash each one in for cards and damage.",
+    "youAre": "Aggressive but not reckless. You like pressure that also pays rent.",
+    "media": [
+      "300",
+      "Mount & Blade",
+      "Spartacus"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Mobilize",
+      "Tokens",
+      "Aggro value"
+    ]
+  },
+  {
+    "name": "Korvold, Fae-Cursed King",
+    "rank": 61,
+    "colors": [
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "sacrifice": 3,
+      "value": 3,
+      "aggro": 2,
+      "bigstuff": 1
+    },
+    "tagline": "Greedy dragon, eats his own stuff, gets huge",
+    "blurb": "Sacrifice treasure, tokens, lands, anything — Korvold draws a card and grows every time. The greed is the engine.",
+    "plan": "Sacrifice everything you own for cards and counters, then attack with a giant dragon.",
+    "youAre": "Maximalist. Why choose between card advantage and a huge monster?",
+    "media": [
+      "Smaug",
+      "Ocean's Eleven",
+      "Hoarders (affectionately)"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Sacrifice",
+      "Treasure",
+      "Dragon"
+    ]
+  },
+  {
+    "name": "Tom Bombadil",
+    "rank": 62,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "enchant": 3,
+      "value": 3,
+      "chaos": 1,
+      "control": 1
+    },
+    "tagline": "Sings a song, becomes invincible, chains sagas forever",
+    "blurb": "Every saga that finishes finds the next one for free, and with enough lore counters he can't be touched. The weirdest, cosiest engine in the format.",
+    "plan": "Chain sagas off each other, accumulate lore counters, become untouchable.",
+    "youAre": "Unbothered by everyone else's drama. You're doing your own thing and it's working.",
+    "media": [
+      "The Lord of the Rings",
+      "Folk music",
+      "Lighthearted fantasy"
+    ],
+    "franchise": "lotr",
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Sagas",
+      "Enchantments",
+      "Free spells"
+    ]
+  },
+  {
+    "name": "Gishath, Sun's Avatar",
+    "rank": 63,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "kindred": 3,
+      "bigstuff": 3,
+      "aggro": 3
+    },
+    "tagline": "Hit someone. Dinosaurs fall out.",
+    "blurb": "Gishath connects and you flip cards off the top, putting every dinosaur you hit directly onto the battlefield. The single most fun 'oh no' in the format.",
+    "plan": "Ramp to Gishath, land one attack, vomit dinosaurs onto the table.",
+    "youAre": "An unashamed theme player with big-swing energy. Spectacle over subtlety.",
+    "media": [
+      "Jurassic Park",
+      "Monster Hunter",
+      "Pacific Rim"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Dinosaurs",
+      "Ramp",
+      "Haymaker"
+    ]
+  },
+  {
+    "name": "Arabella, Abandoned Doll",
+    "rank": 64,
+    "colors": [
+      "R",
+      "W"
+    ],
+    "arch": {
+      "tokens": 3,
+      "lifegain": 2,
+      "aggro": 3,
+      "kindred": 1
+    },
+    "tagline": "A tiny doll leading an army of tiny things",
+    "blurb": "Attack and drain the table for the number of small creatures you control, gaining that much life. Cheap, fast, and quietly one of the best two-drops around.",
+    "plan": "Flood the board with small creatures and drain everyone every combat.",
+    "youAre": "You root for the little guys, and you've noticed that lots of little guys beat one big one.",
+    "media": [
+      "Toy Story",
+      "Coraline",
+      "Pikmin"
+    ],
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Small creatures",
+      "Drain",
+      "Aggro"
+    ]
+  },
+  {
+    "name": "Felothar the Steadfast",
+    "rank": 65,
+    "colors": [
+      "W",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "control": 2,
+      "value": 3,
+      "sacrifice": 2,
+      "bigstuff": 2
+    },
+    "tagline": "Attack with your defenses",
+    "blurb": "Your creatures hit for their toughness and can attack even with defender, and you can trade one in for a fistful of cards. A fortress that swings back.",
+    "plan": "Build huge-butted creatures, attack with the wall, sacrifice one for a refill.",
+    "youAre": "Resilient. You like being the hardest person at the table to actually kill.",
+    "media": [
+      "Helm's Deep",
+      "Dark Souls shields",
+      "Dune"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Toughness matters",
+      "Defenders",
+      "Card draw"
+    ]
+  },
+  {
+    "name": "The Wandering Minstrel",
+    "rank": 66,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "lands": 3,
+      "value": 2,
+      "tokens": 2,
+      "kindred": 1
+    },
+    "tagline": "Collect towns, sing a song, pump the band",
+    "blurb": "A two-mana five-color commander that makes your lands enter untapped and rewards you for collecting Towns. Gentle, odd and surprisingly efficient.",
+    "plan": "Assemble a strange land base, make elemental friends, finish with a big pump.",
+    "youAre": "A wanderer and a completionist. You like maps with little icons to fill in.",
+    "media": [
+      "Breath of the Wild",
+      "The Hobbit",
+      "Road-trip documentaries"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Lands",
+      "Five color",
+      "Anthem"
+    ]
+  },
+  {
+    "name": "Avatar Aang",
+    "rank": 67,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "value": 3,
+      "counters": 2,
+      "spells": 2,
+      "chaos": 1
+    },
+    "tagline": "Master all four elements, then break the mana cost rules",
+    "blurb": "Bend water, earth, fire and air in one turn and he flips into a creature that makes your spells cost five less. A genuine puzzle, with a huge payoff.",
+    "plan": "Trigger every bending type each turn, draw cards, transform and cast everything.",
+    "youAre": "A generalist who refuses to specialize. You want to be good at all of it.",
+    "media": [
+      "Avatar: The Last Airbender",
+      "Spirited Away",
+      "Jedi training montages"
+    ],
+    "franchise": "avatar",
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Bending",
+      "Transform",
+      "Cost reduction"
+    ]
+  },
+  {
+    "name": "Shorikai, Genesis Engine",
+    "rank": 68,
+    "colors": [
+      "W",
+      "U"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "value": 3,
+      "control": 2,
+      "tokens": 2
+    },
+    "tagline": "A giant mech that draws two cards a turn",
+    "blurb": "Tap it for cards and pilot tokens, then crew it into an 8/8. It's a draw engine, a token engine and a finisher in one very large chassis.",
+    "plan": "Loot every turn for free, build a pilot crew, swing with a giant vehicle.",
+    "youAre": "An engineer at heart. You want the machine running smoothly before you do anything flashy.",
+    "media": [
+      "Gundam",
+      "Pacific Rim",
+      "Transformers"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Vehicles",
+      "Card draw",
+      "Tokens"
+    ]
+  },
+  {
+    "name": "Queen Marchesa",
+    "rank": 69,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "politics": 3,
+      "control": 2,
+      "stax": 2,
+      "value": 1
+    },
+    "tagline": "The crown, the knives, the smile",
+    "blurb": "She makes you the monarch — everyone wants the crown, which means everyone is attacking someone else. You sit behind assassins and extra cards.",
+    "plan": "Hold the monarchy, punish attackers, let the table fight over the throne.",
+    "youAre": "The social player. You win games at the table as much as on the board.",
+    "media": [
+      "Game of Thrones",
+      "Diplomacy",
+      "The Favourite"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Monarch",
+      "Politics",
+      "Pillowfort"
+    ]
+  },
+  {
+    "name": "Urza, Lord High Artificer",
+    "rank": 70,
+    "colors": [
+      "U"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "combo": 3,
+      "value": 2,
+      "control": 1
+    },
+    "tagline": "The mad inventor in the tower",
+    "blurb": "Turns scrap into mana, mana into cards, cards into an unanswerable turn. The deck is a machine and you are the one who built it.",
+    "plan": "Assemble artifacts until the board produces infinite resources, then cash them in.",
+    "youAre": "The friend who redesigns the system instead of playing it. Elegance is the win condition.",
+    "media": [
+      "Factorio",
+      "Primer",
+      "Death Note"
+    ],
+    "difficulty": 5,
+    "budget": "$$$",
+    "tags": [
+      "Artifacts",
+      "Combo",
+      "Engine"
+    ]
+  },
+  {
+    "name": "Terra, Herald of Hope",
+    "rank": 71,
+    "colors": [
+      "W",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "graveyard": 3,
+      "aggro": 2,
+      "value": 2,
+      "tokens": 1
+    },
+    "tagline": "Mill yourself, fly over, bring friends back",
+    "blurb": "Every combat she self-mills and gains flying, and connecting reanimates a small creature. A cheap, elegant, grindy attacker.",
+    "plan": "Attack in the air, fill your graveyard, reanimate a creature every turn.",
+    "youAre": "Hopeful under pressure. You keep finding ways to rebuild after each setback.",
+    "media": [
+      "Final Fantasy VI",
+      "Nausicaä",
+      "Underdog sports films"
+    ],
+    "franchise": "ff",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Self-mill",
+      "Reanimation",
+      "Evasion"
+    ]
+  },
+  {
+    "name": "Choco, Seeker of Paradise",
+    "rank": 72,
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "lands": 3,
+      "kindred": 2,
+      "value": 3,
+      "aggro": 1
+    },
+    "tagline": "A giant bird that finds you free lands",
+    "blurb": "Birds attack, you dig for cards and drop lands straight onto the battlefield, and the landfall triggers keep rolling. Breezy and extremely consistent.",
+    "plan": "Attack with birds, hit free land drops, snowball landfall value.",
+    "youAre": "A road-trip person. The journey genuinely is the fun part for you.",
+    "media": [
+      "Final Fantasy",
+      "Breath of the Wild",
+      "Nature documentaries"
+    ],
+    "franchise": "ff",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Birds",
+      "Landfall",
+      "Card selection"
+    ]
+  },
+  {
+    "name": "Betor, Ancestor's Voice",
+    "rank": 73,
+    "colors": [
+      "W",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "lifegain": 3,
+      "counters": 3,
+      "graveyard": 2,
+      "value": 2
+    },
+    "tagline": "Lifegain that turns into monsters and resurrections",
+    "blurb": "Every point of life you gain in a turn becomes +1/+1 counters, and then brings a creature back from the dead. Three good decks wearing one trenchcoat.",
+    "plan": "Gain big chunks of life, convert it to counters, reanimate along the way.",
+    "youAre": "Generous and sturdy. You build things that look after themselves.",
+    "media": [
+      "Coco",
+      "Princess Mononoke",
+      "Ancestral folklore"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Lifegain",
+      "Counters",
+      "Reanimation"
+    ]
+  },
+  {
+    "name": "Go-Shintai of Life's Origin",
+    "rank": 74,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "enchant": 3,
+      "value": 3,
+      "tokens": 2,
+      "control": 1
+    },
+    "tagline": "A quiet shrine that never stops growing",
+    "blurb": "Shrines trigger off each other every upkeep, and this one rebuilds the whole collection from the graveyard. Slow, serene, basically impossible to kill.",
+    "plan": "Assemble shrines, trigger them all every upkeep, recur anything removed.",
+    "youAre": "Contemplative and collection-minded. You like a set that completes itself.",
+    "media": [
+      "Spirited Away",
+      "Shinto shrines",
+      "Slow-living games"
+    ],
+    "difficulty": 3,
+    "budget": "$$$",
+    "tags": [
+      "Shrines",
+      "Enchantments",
+      "Five color"
+    ]
+  },
+  {
+    "name": "Helga, Skittish Seer",
+    "rank": 75,
+    "colors": [
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "bigstuff": 3,
+      "counters": 2,
+      "value": 2,
+      "lands": 2
+    },
+    "tagline": "A nervous frog that funds enormous creatures",
+    "blurb": "Cast anything expensive and she draws, gains life and grows — then taps for a pile of mana to cast the next expensive thing. Ramp with a reward loop.",
+    "plan": "Cast big creatures, grow Helga, use her to cast even bigger creatures.",
+    "youAre": "Ambitious but careful. You save up and then spend it all at once.",
+    "media": [
+      "Studio Ghibli",
+      "Frog Detective",
+      "Big-monster movies"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Ramp",
+      "Big creatures",
+      "Counters"
+    ]
+  },
+  {
+    "name": "Auntie Ool, Cursewretch",
+    "rank": 76,
+    "colors": [
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "counters": 3,
+      "control": 2,
+      "value": 3
+    },
+    "tagline": "Minus-one-minus-one counters as a card-draw engine",
+    "blurb": "Shrinking things kills opponents' creatures and draws you cards. A removal-heavy deck where every answer also refills your hand.",
+    "plan": "Spread -1/-1 counters everywhere, draw off your own, drain off theirs.",
+    "youAre": "Prickly, practical, and quietly in charge of everything.",
+    "media": [
+      "Hocus Pocus",
+      "Baba Yaga folktales",
+      "Over the Garden Wall"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "-1/-1 counters",
+      "Removal",
+      "Card draw"
+    ]
+  },
+  {
+    "name": "K'rrik, Son of Yawgmoth",
+    "rank": 77,
+    "colors": [
+      "B"
+    ],
+    "arch": {
+      "combo": 2,
+      "aggro": 2,
+      "value": 2,
+      "lifegain": 1,
+      "counters": 1
+    },
+    "tagline": "Pay in blood, not in mana",
+    "blurb": "Every black mana can be paid with two life instead. Your life total is a currency and you intend to spend all of it.",
+    "plan": "Burn life for absurdly fast spells, then drain the table before the bill comes due.",
+    "youAre": "Ambitious and a touch reckless. You've never met a long-term consequence you couldn't out-run.",
+    "media": [
+      "Breaking Bad",
+      "Faust",
+      "Dark Souls"
+    ],
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Life as resource",
+      "Fast mana",
+      "Mono-black"
+    ]
+  },
+  {
+    "name": "Zaxara, the Exemplary",
+    "rank": 78,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "bigstuff": 3,
+      "tokens": 2,
+      "counters": 2,
+      "combo": 2
+    },
+    "tagline": "Every X spell comes with a free hydra",
+    "blurb": "Cast anything with an X in the cost and get a hydra of that size for free. Doubles as a mana engine. Big numbers, free monsters, happy times.",
+    "plan": "Ramp hard, cast enormous X spells, collect a free hydra with each one.",
+    "youAre": "You like the slider all the way to the right. How big can it get? Let's find out.",
+    "media": [
+      "Hydra myths",
+      "Katamari Damacy",
+      "Factorio megabases"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "X spells",
+      "Hydras",
+      "Big mana"
+    ]
+  },
+  {
+    "name": "Kotis, the Fangkeeper",
+    "rank": 79,
+    "colors": [
+      "U",
+      "B",
+      "G"
+    ],
+    "arch": {
+      "theft": 3,
+      "aggro": 2,
+      "value": 3
+    },
+    "tagline": "Hit them, then play their deck",
+    "blurb": "Combat damage exiles cards off their library and lets you cast them for free. Indestructible, evasive, and funded entirely by other people.",
+    "plan": "Make Kotis huge and unblockable, then cast whatever falls out of their deck.",
+    "youAre": "An opportunist with good taste. Why build it when you can take it?",
+    "media": [
+      "Ocean's Eleven",
+      "Loki",
+      "Heist thrillers"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Theft",
+      "Combat damage",
+      "Free spells"
+    ]
+  },
+  {
+    "name": "Terra, Magical Adept",
+    "rank": 80,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "enchant": 3,
+      "graveyard": 2,
+      "value": 2,
+      "spells": 2
+    },
+    "tagline": "Mill into enchantments, then become one",
+    "blurb": "She digs into your graveyard for enchantments, then flips into an Esper saga that rewrites the board. A build-up deck with a dramatic second act.",
+    "plan": "Set up enchantments and graveyard value, then transform for a huge payoff.",
+    "youAre": "A late bloomer who likes a transformation arc. Patience, then fireworks.",
+    "media": [
+      "Final Fantasy VI",
+      "Sailor Moon",
+      "Coming-of-age fantasy"
+    ],
+    "franchise": "ff",
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Enchantments",
+      "Self-mill",
+      "Transform"
+    ]
+  },
+  {
+    "name": "The First Sliver",
+    "rank": 81,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "value": 3,
+      "aggro": 2,
+      "chaos": 1
+    },
+    "tagline": "A hive mind that casts itself for free",
+    "blurb": "Every sliver cascades into another sliver. One cast becomes four, the whole team shares abilities, and the board becomes a single enormous organism.",
+    "plan": "Cast slivers, cascade into more slivers, overwhelm with a shared-ability horde.",
+    "youAre": "You love a collective. The hive is greater than the individual and you're fine with that.",
+    "media": [
+      "Starship Troopers",
+      "StarCraft Zerg",
+      "The Thing"
+    ],
+    "difficulty": 3,
+    "budget": "$$$",
+    "tags": [
+      "Slivers",
+      "Cascade",
+      "Five color"
+    ]
+  },
+  {
+    "name": "Kilo, Apogee Mind",
+    "rank": 82,
+    "colors": [
+      "U",
+      "R",
+      "W"
+    ],
+    "arch": {
+      "counters": 3,
+      "artifacts": 2,
+      "value": 2,
+      "combo": 2
+    },
+    "tagline": "A robot that proliferates every time it taps",
+    "blurb": "Tap it for anything — crewing, abilities, attacking — and every counter on the board grows. A clean, elegant engine for anyone who loves a counter.",
+    "plan": "Tap Kilo as many times a turn as possible, proliferating everything each time.",
+    "youAre": "A systems thinker. You enjoy finding how many times one trigger can be re-used.",
+    "media": [
+      "WALL-E",
+      "Portal",
+      "Factorio"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Proliferate",
+      "Artifacts",
+      "Counters"
+    ]
+  },
+  {
+    "name": "Sisay, Weatherlight Captain",
+    "rank": 83,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "value": 3,
+      "kindred": 2,
+      "combo": 3
+    },
+    "tagline": "Tutor up any legend, any time",
+    "blurb": "She grows with every color you control and fetches legendary permanents straight onto the battlefield. A toolbox that always has the answer.",
+    "plan": "Grow Sisay with legendary permanents, then tutor the exact piece you need.",
+    "youAre": "A planner who hates drawing the wrong card. You want the toolbox, not the gamble.",
+    "media": [
+      "Firefly",
+      "Mass Effect crew-building",
+      "Heist crews"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Legends",
+      "Tutors",
+      "Toolbox"
+    ]
+  },
+  {
+    "name": "Xyris, the Writhing Storm",
+    "rank": 84,
+    "colors": [
+      "U",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "tokens": 3,
+      "chaos": 2,
+      "value": 2,
+      "politics": 1,
+      "combo": 1
+    },
+    "tagline": "Everyone draws a thousand cards. You get snakes.",
+    "blurb": "Wheel the table over and over; every extra card an opponent draws makes you a snake. Generosity and punishment in equal measure.",
+    "plan": "Force mass draws, build a snake army, swing for an absurd refill.",
+    "youAre": "The chaos-friendly host. Everyone has a great time, you win, nobody's quite sure how.",
+    "media": [
+      "Jackbox nights",
+      "Rick and Morty",
+      "Casino heists"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Wheels",
+      "Snakes",
+      "Group draw"
+    ]
+  },
+  {
+    "name": "Ghyrson Starn, Kelermorph",
+    "rank": 85,
+    "colors": [
+      "U",
+      "R"
+    ],
+    "arch": {
+      "spells": 3,
+      "combo": 2,
+      "control": 2
+    },
+    "tagline": "Every tiny ping becomes a real hit",
+    "blurb": "Any source of yours dealing exactly 1 damage instead deals 2 more. Suddenly every incidental ping in your deck is a removal spell.",
+    "plan": "Build a deck of 1-damage pingers and turn them all into artillery.",
+    "youAre": "A detail person. You found the interaction nobody noticed and built around it.",
+    "media": [
+      "Warhammer 40,000",
+      "Sniper Elite",
+      "Precision shooters"
+    ],
+    "franchise": "40k",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Pingers",
+      "Damage doubling",
+      "Spellslinger"
+    ]
+  },
+  {
+    "name": "Ragost, Deft Gastronaut",
+    "rank": 86,
+    "colors": [
+      "R",
+      "W"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "lifegain": 2,
+      "sacrifice": 2,
+      "aggro": 1
+    },
+    "tagline": "A lobster chef turning your artifacts into dinner",
+    "blurb": "All your artifacts become Food, you eat them for life, and eating untaps Ragost to throw three damage at everyone. Cheap, fast, and very silly.",
+    "plan": "Make artifacts, sacrifice them as Food, machine-gun the table for 3 at a time.",
+    "youAre": "A home cook with a chaotic streak. Everything is an ingredient if you're brave.",
+    "media": [
+      "The Bear",
+      "Ratatouille",
+      "Overcooked"
+    ],
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Food",
+      "Artifacts",
+      "Reach damage"
+    ]
+  },
+  {
+    "name": "Norman Osborn",
+    "rank": 87,
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "aggro": 2,
+      "value": 3,
+      "counters": 1,
+      "chaos": 2
+    },
+    "tagline": "Unblockable businessman, eventual flying menace",
+    "blurb": "He can't be blocked, connives on damage, and transforms into the Green Goblin when you decide the mask comes off. A great villain arc in one card.",
+    "plan": "Connive every turn to sculpt a perfect hand, then flip and go on the offensive.",
+    "youAre": "Two-sided. Polished in public, absolutely feral about your hobbies.",
+    "media": [
+      "Spider-Man",
+      "American Psycho",
+      "Succession"
+    ],
+    "franchise": "marvel",
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Connive",
+      "Transform",
+      "Evasion"
+    ]
+  },
+  {
+    "name": "Eriette of the Charmed Apple",
+    "rank": 88,
+    "colors": [
+      "W",
+      "B"
+    ],
+    "arch": {
+      "enchant": 3,
+      "stax": 3,
+      "lifegain": 2,
+      "control": 1
+    },
+    "tagline": "Enchant their creatures so they can't attack you",
+    "blurb": "Auras on their creatures turn off attacks against you, and every aura drains the table at end of turn. A fairy-tale pillow fort that quietly kills everyone.",
+    "plan": "Put auras on everything, lock down attackers, drain the table each end step.",
+    "youAre": "Charming and a tiny bit manipulative. You prefer not to be attacked, thank you.",
+    "media": [
+      "Snow White",
+      "Into the Woods",
+      "Fairy-tale retellings"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Auras",
+      "Pillowfort",
+      "Drain"
+    ]
+  },
+  {
+    "name": "Hope Estheim",
+    "rank": 89,
+    "colors": [
+      "W",
+      "U"
+    ],
+    "arch": {
+      "lifegain": 3,
+      "theft": 3,
+      "control": 1
+    },
+    "tagline": "Gain life, mill them out",
+    "blurb": "Every point of life you gain in a turn mills each opponent. A two-mana commander that wins by decking the table while quietly building a huge life total.",
+    "plan": "Chain lifegain triggers and convert them into mass mill.",
+    "youAre": "Kind but goal-focused. You'd never attack anyone. You'd just end the game.",
+    "media": [
+      "Final Fantasy XIII",
+      "Puzzle games",
+      "Quiet achievers"
+    ],
+    "franchise": "ff",
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Lifegain",
+      "Mill",
+      "Alt win"
+    ]
+  },
+  {
+    "name": "Henzie \"Toolbox\" Torre",
+    "rank": 90,
+    "colors": [
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "bigstuff": 3,
+      "aggro": 3,
+      "sacrifice": 2,
+      "value": 2
+    },
+    "tagline": "Big creatures, cheap, hasty, and briefly",
+    "blurb": "Blitz lets you cast huge creatures early with haste — they die at end of turn, but you draw a card. A deck full of enormous one-night stands.",
+    "plan": "Blitz oversized creatures every turn, attack immediately, draw when they die.",
+    "youAre": "Impatient and generous. You'd rather do the exciting thing now than hold it back.",
+    "media": [
+      "Fast & Furious",
+      "Doom Eternal",
+      "Wrestling"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Blitz",
+      "Big creatures",
+      "Haste"
+    ]
+  },
+  {
+    "name": "Captain N'ghathrod",
+    "rank": 91,
+    "colors": [
+      "U",
+      "B"
+    ],
+    "arch": {
+      "theft": 3,
+      "kindred": 2,
+      "graveyard": 2,
+      "aggro": 1
+    },
+    "tagline": "Mill them, then steal what you milled",
+    "blurb": "Horrors with menace mill opponents on damage, and at end of turn you reanimate the best thing that hit their graveyard. Piracy with tentacles.",
+    "plan": "Attack with menacing horrors, mill the table, steal their best creatures.",
+    "youAre": "A connoisseur of other people's good ideas. You'll take care of it better anyway.",
+    "media": [
+      "Pirates of the Caribbean",
+      "Lovecraft",
+      "Sea of Thieves"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Mill",
+      "Reanimate theirs",
+      "Horrors"
+    ]
+  },
+  {
+    "name": "Urtet, Remnant of Memnarch",
+    "rank": 92,
+    "colors": [
+      "W",
+      "U",
+      "B",
+      "R",
+      "G"
+    ],
+    "arch": {
+      "artifacts": 3,
+      "kindred": 3,
+      "counters": 2,
+      "combo": 2
+    },
+    "tagline": "Myr. Hundreds of them. All untapping.",
+    "blurb": "Every Myr spell makes a Myr token, they all untap each combat, and for five colors of mana they all get huge. Robot tribal with a real combo ceiling.",
+    "plan": "Build a Myr army, untap them for mana every turn, pump and swing.",
+    "youAre": "Fascinated by repetition and scale. A hundred small identical things is your aesthetic.",
+    "media": [
+      "Horizon Zero Dawn",
+      "I, Robot",
+      "Factorio"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Myr",
+      "Artifacts",
+      "Untap"
+    ]
+  },
+  {
+    "name": "Omnath, Locus of Creation",
+    "rank": 93,
+    "colors": [
+      "R",
+      "G",
+      "W",
+      "U"
+    ],
+    "arch": {
+      "lands": 3,
+      "value": 3,
+      "combo": 1,
+      "bigstuff": 1
+    },
+    "tagline": "Lands, but as a win condition",
+    "blurb": "Every land you play gives life, then mana, then damage. Turn one it's a nature documentary; turn seven it's a weather event.",
+    "plan": "Play extra lands every turn and convert landfall into an avalanche of value.",
+    "youAre": "Growth-oriented and generous with your own time. You like a build that rewards patience.",
+    "media": [
+      "Studio Ghibli",
+      "Terraforming Mars",
+      "Planet Earth"
+    ],
+    "difficulty": 4,
+    "budget": "$$$",
+    "tags": [
+      "Landfall",
+      "Ramp",
+      "Four color"
+    ]
+  },
+  {
+    "name": "Voja, Jaws of the Conclave",
+    "rank": 94,
+    "colors": [
+      "R",
+      "G",
+      "W"
+    ],
+    "arch": {
+      "kindred": 3,
+      "counters": 3,
+      "aggro": 3
+    },
+    "tagline": "Wolves and elves, counters everywhere",
+    "blurb": "Attack and every creature you control gets counters equal to your elf count, plus a card for each wolf. Two tribes, one enormous attack step.",
+    "plan": "Build an elf board, attack with Voja, dump counters on everything and draw.",
+    "youAre": "A team captain. You want the whole squad to level up together.",
+    "media": [
+      "Princess Mononoke",
+      "The Witcher",
+      "Wolf documentaries"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Elves & Wolves",
+      "Counters",
+      "Combat"
+    ]
+  },
+  {
+    "name": "High Perfect Morcant",
+    "rank": 95,
+    "colors": [
+      "B",
+      "G"
+    ],
+    "arch": {
+      "kindred": 3,
+      "counters": 3,
+      "control": 2
+    },
+    "tagline": "Elves that shrink everyone else's board",
+    "blurb": "Every elf that arrives puts a -1/-1 counter on an opponent's creature, and you can tap three elves to proliferate it all. Tribal removal on a stick.",
+    "plan": "Build an elf board, blight the table's creatures, proliferate until they're gone.",
+    "youAre": "Disciplined and a touch merciless. You like winning by making others smaller.",
+    "media": [
+      "The Witcher",
+      "Elden Ring",
+      "Grimdark fantasy"
+    ],
+    "difficulty": 2,
+    "budget": "$",
+    "tags": [
+      "Elves",
+      "-1/-1 counters",
+      "Proliferate"
+    ]
+  },
+  {
+    "name": "Witherbloom, the Balancer",
+    "rank": 96,
+    "colors": [
+      "B",
+      "G"
+    ],
+    "arch": {
+      "bigstuff": 2,
+      "spells": 2,
+      "value": 3,
+      "control": 2
+    },
+    "tagline": "An eight-drop dragon you cast for three",
+    "blurb": "Affinity for creatures makes this huge flier cheap — and then your instants and sorceries get the discount too. A deathtouch dragon that enables a whole deck.",
+    "plan": "Build a creature board, cast the dragon early, then cast spells nearly free.",
+    "youAre": "Efficient to a fault. You hate paying full price for anything.",
+    "media": [
+      "Witcher bestiaries",
+      "Dark academia",
+      "Herbology"
+    ],
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Affinity",
+      "Dragon",
+      "Cheap spells"
+    ]
+  },
+  {
+    "name": "Alela, Cunning Conqueror",
+    "rank": 97,
+    "colors": [
+      "U",
+      "B"
+    ],
+    "arch": {
+      "tokens": 2,
+      "control": 3,
+      "spells": 2,
+      "politics": 2,
+      "kindred": 1
+    },
+    "tagline": "Play on their turn, make faeries, start fights",
+    "blurb": "Hold up instants; every turn cycle you get a flying faerie, and when faeries connect you goad a creature so someone else gets attacked. Perfect control-politics.",
+    "plan": "Play at instant speed, accrue faeries, goad the table into fighting each other.",
+    "youAre": "Reactive and sly. You'd rather respond than commit, and you love redirecting trouble.",
+    "media": [
+      "A Midsummer Night's Dream",
+      "Fleabag",
+      "Spy thrillers"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Faeries",
+      "Flash",
+      "Goad"
+    ]
+  },
+  {
+    "name": "Magda, Brazen Outlaw",
+    "rank": 98,
+    "colors": [
+      "R"
+    ],
+    "arch": {
+      "kindred": 3,
+      "artifacts": 2,
+      "combo": 3,
+      "value": 1
+    },
+    "tagline": "Dwarves make treasure; treasure finds dragons",
+    "blurb": "Tap dwarves for treasure, then trade five treasures for any artifact or dragon in your deck. A two-mana tutor engine that looks completely harmless.",
+    "plan": "Build a dwarf crew, generate treasure, tutor out game-ending artifacts.",
+    "youAre": "A scrappy schemer. Small resources, converted cleverly, into something enormous.",
+    "media": [
+      "The Hobbit",
+      "Deep Rock Galactic",
+      "Heist movies"
+    ],
+    "difficulty": 3,
+    "budget": "$$",
+    "tags": [
+      "Dwarves",
+      "Treasure",
+      "Tutor"
+    ]
+  },
+  {
+    "name": "Obeka, Splitter of Seconds",
+    "rank": 99,
+    "colors": [
+      "U",
+      "B",
+      "R"
+    ],
+    "arch": {
+      "combo": 3,
+      "chaos": 2,
+      "value": 3
+    },
+    "tagline": "Extra upkeeps: the most broken boring phrase in Magic",
+    "blurb": "Connect and you get that many extra upkeep steps — meaning every 'at the beginning of your upkeep' card fires again and again. Deckbuilding as a dare.",
+    "plan": "Make Obeka connect, then trigger a hand full of upkeep effects many times over.",
+    "youAre": "A rules-text sicko in the best way. You read the fine print for fun.",
+    "media": [
+      "Groundhog Day",
+      "Primer",
+      "Outer Wilds"
+    ],
+    "difficulty": 4,
+    "budget": "$$",
+    "tags": [
+      "Extra upkeeps",
+      "Combo",
+      "Menace"
+    ]
+  },
+  {
+    "name": "Marneus Calgar",
+    "rank": 100,
+    "colors": [
+      "W",
+      "U",
+      "B"
+    ],
+    "arch": {
+      "tokens": 3,
+      "value": 3,
+      "aggro": 2,
+      "kindred": 1
+    },
+    "tagline": "Space marines: make tokens, draw cards, double strike",
+    "blurb": "Any tokens entering draws you a card, and he can make his own at will. A disciplined, armored value engine with a real clock attached.",
+    "plan": "Produce tokens constantly, draw a card every time, win with double strike.",
+    "youAre": "Dependable and organized. You bring a plan, a backup, and extra sleeves.",
+    "media": [
+      "Warhammer 40,000",
+      "Starship Troopers",
+      "Mass Effect"
+    ],
+    "franchise": "40k",
+    "difficulty": 2,
+    "budget": "$$",
+    "tags": [
+      "Tokens",
+      "Card draw",
+      "Double strike"
+    ]
+  }
+]

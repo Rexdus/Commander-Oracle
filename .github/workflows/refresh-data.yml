@@ -1,0 +1,55 @@
+name: Refresh commander catalog
+
+on:
+  schedule:
+    # Mondays at 05:17 UTC. EDHREC refreshes its rankings roughly daily.
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "EDHREC pages to read (100 commanders per page)"
+        required: false
+        default: "5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: commander-catalog-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh EDHREC + Scryfall catalog
+        run: npm run data:refresh
+        env:
+          CATALOG_PAGES: ${{ github.event.inputs.pages || '5' }}
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Commit catalog if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/commanders.catalog.json
+          if git diff --staged --quiet; then
+            echo "No catalog changes."
+          else
+            git commit -m "Refresh commander catalog from EDHREC and Scryfall"
+            git push
+          fi
