@@ -1,6 +1,16 @@
 name: Refresh commander catalog
 
 on:
+  push:
+    branches:
+      - main
+      - arena/b4700aaf-commander-oracle
+    # The workflow commits only commanders.catalog.json, so this does not loop.
+    paths:
+      - ".github/workflows/refresh-data.yml"
+      - "scripts/refresh-catalog.ts"
+      - "src/lib/catalog.ts"
+      - "src/data/commanders.seed.json"
   schedule:
     # Mondays at 05:17 UTC. EDHREC refreshes its rankings roughly daily.
     - cron: "17 5 * * 1"
