@@ -1,6 +1,10 @@
 import { readFile, writeFile } from "node:fs/promises";
 import type { Commander } from "../src/types.ts";
-import { buildLiveCatalog } from "../src/lib/catalog.ts";
+import {
+  buildLiveCatalog,
+  DEFAULT_CATALOG_PAGES,
+  MAX_CATALOG_PAGES,
+} from "../src/lib/catalog.ts";
 
 const seedPath = new URL("../src/data/commanders.seed.json", import.meta.url);
 const outputPath = new URL(
@@ -10,9 +14,18 @@ const outputPath = new URL(
 
 async function main(): Promise<void> {
   const seed = JSON.parse(await readFile(seedPath, "utf8")) as Commander[];
+  const requestedPages = Number.parseInt(
+    process.env.CATALOG_PAGES ?? String(DEFAULT_CATALOG_PAGES),
+    10,
+  );
   const pages = Math.max(
     1,
-    Math.min(10, Number.parseInt(process.env.CATALOG_PAGES ?? "5", 10) || 5),
+    Math.min(
+      MAX_CATALOG_PAGES,
+      Number.isFinite(requestedPages)
+        ? requestedPages
+        : DEFAULT_CATALOG_PAGES,
+    ),
   );
 
   const result = await buildLiveCatalog({
@@ -22,9 +35,10 @@ async function main(): Promise<void> {
       "Commander-Oracle/1.0 (https://github.com/Rexdus/Commander-Oracle; data refresh)",
   });
 
-  if (result.commanders.length < 100) {
+  const minimum = Math.max(100, Math.floor(pages * 100 * 0.99));
+  if (result.commanders.length < minimum) {
     throw new Error(
-      `Refusing to write a catalog with only ${result.commanders.length} commanders`,
+      `Refusing to write a partial catalog: expected at least ${minimum} commanders, got ${result.commanders.length}`,
     );
   }
 

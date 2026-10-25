@@ -14,7 +14,11 @@ import {
   INITIAL_CATALOG,
 } from "./data/commanders";
 import { ARCHES, buildProfile, scoreCommanders } from "./lib/scoring";
-import { buildLiveCatalog } from "./lib/catalog";
+import {
+  buildLiveCatalog,
+  DEFAULT_CATALOG_PAGES,
+  MAX_CATALOG_PAGES,
+} from "./lib/catalog";
 import {
   buildShareUrl,
   clearResultHash,
@@ -220,13 +224,16 @@ export default function App() {
     setCatalogStatus("loading");
     setCatalogError(null);
     const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 15000);
+    const timeout = window.setTimeout(() => controller.abort(), 30000);
 
     try {
-      // Never shrink a checked-in 500-commander catalog down to 300 on refresh.
+      // Never shrink a checked-in 1,000-commander catalog on refresh.
       const pages = Math.min(
-        10,
-        Math.max(3, Math.ceil(catalogRef.current.commanders.length / 100)),
+        MAX_CATALOG_PAGES,
+        Math.max(
+          DEFAULT_CATALOG_PAGES,
+          Math.ceil(catalogRef.current.commanders.length / 100),
+        ),
       );
       const result = await buildLiveCatalog({
         seed: CURATED_COMMANDERS,

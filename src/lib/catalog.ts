@@ -14,7 +14,8 @@ const EDHREC_PAGES_BASE = "https://json.edhrec.com/pages/";
 const SCRYFALL_COLLECTION_URL = "https://api.scryfall.com/cards/collection";
 const COLOR_ORDER: ColorKey[] = ["W", "U", "B", "R", "G"];
 const SCRYFALL_BATCH_SIZE = 75;
-const DEFAULT_PAGES = 3;
+export const DEFAULT_CATALOG_PAGES = 10;
+export const MAX_CATALOG_PAGES = 20;
 
 type FetchLike = typeof fetch;
 
@@ -564,7 +565,10 @@ function buildCommander(
 export async function buildLiveCatalog(
   options: BuildCatalogOptions,
 ): Promise<CommanderCatalog> {
-  const pages = Math.max(1, Math.min(options.pages ?? DEFAULT_PAGES, 10));
+  const pages = Math.max(
+    1,
+    Math.min(options.pages ?? DEFAULT_CATALOG_PAGES, MAX_CATALOG_PAGES),
+  );
   const rows = await fetchEdhrecRows(pages, options);
   const lookup = await fetchScryfallCards(rows, options);
   const generatedAt = options.generatedAt ?? new Date().toISOString();

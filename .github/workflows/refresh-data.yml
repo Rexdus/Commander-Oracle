@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - main
-      - arena/b4700aaf-commander-oracle
+      - "arena/**"
     # The workflow commits only commanders.catalog.json, so this does not loop.
     paths:
       - ".github/workflows/refresh-data.yml"
       - "scripts/refresh-catalog.ts"
+      - "scripts/refresh-on-ci.mjs"
       - "src/lib/catalog.ts"
       - "src/data/commanders.seed.json"
   schedule:
@@ -17,9 +18,9 @@ on:
   workflow_dispatch:
     inputs:
       pages:
-        description: "EDHREC pages to read (100 commanders per page)"
+        description: "EDHREC pages to read (100 commanders per page; 10 = top 1,000)"
         required: false
-        default: "5"
+        default: "10"
 
 permissions:
   contents: write
@@ -31,6 +32,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -47,7 +49,7 @@ jobs:
       - name: Refresh EDHREC + Scryfall catalog
         run: npm run data:refresh
         env:
-          CATALOG_PAGES: ${{ github.event.inputs.pages || '5' }}
+          CATALOG_PAGES: ${{ github.event.inputs.pages || '10' }}
 
       - name: Type check
         run: npm run typecheck

@@ -21,11 +21,11 @@ personality quiz, or skip it and explore a live commander catalog.
 - **Feedback loop.** “Not for me” removes a commander and nudges the profile
   away from its dominant styles; favorites nudge toward similar commanders.
   Favorites, skips and preferences persist locally.
-- **Fresh, broader data.** The checked-in catalog contains 500 commanders:
-  100 curated annotations plus 400 generated entries from EDHREC’s public
-  top-commander pages and Scryfall’s card collection API. The app also
-  refreshes live in the browser, never shrinking the catalog, and the build
-  workflow can commit even more pages.
+- **Fresh, broader data.** The checked-in catalog contains EDHREC’s top
+  1,000 commanders: 100 curated annotations plus 900 generated entries from
+  EDHREC’s public ranking pages and Scryfall’s card collection API. The app
+  also refreshes live in the browser, never shrinking the catalog, and
+  `CATALOG_PAGES` can be raised for future expansion.
 - **Direct discovery.** Search by name, theme, oracle text, color identity,
   strategy, budget, complexity, franchise and estimated bracket, with quick
   starts for budget, beginner, tribal, spellslinger and crossover decks.
@@ -50,7 +50,7 @@ npm run build
 ## Commander data
 
 `src/data/commanders.seed.json` contains the curated top-100 annotations.
-`src/data/commanders.catalog.json` is a checked-in 500-commander snapshot used
+`src/data/commanders.catalog.json` is a checked-in 1,000-commander snapshot used
 before a live refresh. The app tries to refresh EDHREC/Scryfall data on load,
 requests at least as many ranking pages as the current catalog contains,
 caches the last successful catalog in `localStorage`, and falls back to the
@@ -60,8 +60,8 @@ To regenerate the static catalog locally:
 
 ```sh
 npm run data:refresh
-# Read more EDHREC pages; each page contains about 100 commanders.
-CATALOG_PAGES=5 npm run data:refresh
+# Ten pages covers EDHREC's top 1,000 commanders.
+CATALOG_PAGES=10 npm run data:refresh
 ```
 
 The refresh script follows EDHREC’s ranked “past 2 years” pages, resolves the
@@ -71,10 +71,11 @@ power for new commanders from card text, price and popularity. Generated
 labels are estimates and are marked as such in the UI.
 
 A `Refresh commander catalog` GitHub Actions workflow runs weekly, on
-data-pipeline changes, and can also be started manually. It runs the same
-script, type-checks, and commits the generated catalog when it changes.
-GitHub Pages builds also attempt a catalog refresh before bundling, while
-local builds stay offline.
+data-pipeline changes, and can also be started manually. Its default refresh
+reads 10 EDHREC pages, covering ranks 1–1,000. It runs the same script,
+type-checks, and commits the generated catalog when it changes. GitHub Pages
+builds also attempt a catalog refresh before bundling, while local builds stay
+offline.
 
 Data and images come from EDHREC and Scryfall. EDHREC’s JSON endpoints are
 unofficial and may change; the app keeps the previous catalog when a refresh

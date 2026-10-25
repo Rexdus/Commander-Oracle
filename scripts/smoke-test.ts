@@ -12,7 +12,9 @@ import {
 import {
   budgetDecklistUrl,
   buildLiveCatalog,
+  DEFAULT_CATALOG_PAGES,
   edhrecSlug,
+  MAX_CATALOG_PAGES,
 } from "../src/lib/catalog.ts";
 
 // Shareable result links survive a round trip, including preferences.
@@ -95,6 +97,8 @@ assert.equal(
   "yshtola-nights-blessed",
 );
 assert.match(budgetDecklistUrl("Krenko, Mob Boss"), /moxfield\.com/);
+assert.equal(DEFAULT_CATALOG_PAGES, 10);
+assert.ok(MAX_CATALOG_PAGES >= 10);
 
 // The EDHREC/Scryfall catalog builder works against mocked public payloads.
 const curatedKrenko = CURATED_COMMANDERS.find(
@@ -231,5 +235,101 @@ assert.ok((generatedCommander?.arch.tokens ?? 0) > 0);
 assert.ok((generatedCommander?.arch.graveyard ?? 0) > 0);
 assert.equal(generatedCommander?.priceUsd, 1.25);
 assert.ok(generatedCommander?.bracketEstimate);
+
+
+// Ten EDHREC pages produce a complete top-1,000 catalog.
+const jsonResponse = (body: unknown) =>
+  new Response(JSON.stringify(body), {
+    status: 200,
+    headers: { "Content-Type": "application/json" },
+  });
+
+const makeRankingRow = (rank: number) => ({
+  id: `id-${rank}`,
+  name: `Commander ${rank}`,
+  sanitized: `commander-${rank}`,
+  url: `/commanders/commander-${rank}`,
+  num_decks: 10000 - rank,
+  rank,
+  trend_zscore: 0,
+});
+
+const makeRankingPage = (page: number) => {
+  const start = page * 100 + 1;
+  const cardviews = Array.from({ length: 100 }, (_, offset) =>
+    makeRankingRow(start + offset),
+  );
+  if (page === 0) {
+    return {
+      container: {
+        json_dict: {
+          cardlists: [
+            {
+              cardviews,
+              more: "commanders/year-past2years-1.json",
+            },
+          ],
+        },
+      },
+    };
+  }
+  return {
+    cardviews,
+    ...(page < 9
+      ? { more: `commanders/year-past2years-${page + 1}.json` }
+      : {}),
+  };
+};
+
+const thousandFetch = (async (
+  input: RequestInfo | URL,
+  init?: RequestInit,
+) => {
+  const url = String(input);
+  if (url.endsWith("commanders/year.json")) {
+    return jsonResponse(makeRankingPage(0));
+  }
+  const pageMatch = url.match(/year-past2years-(\d+)\.json/);
+  if (pageMatch) {
+    return jsonResponse(makeRankingPage(Number(pageMatch[1])));
+  }
+  if (url.includes("cards/collection")) {
+    const body = JSON.parse(String(init?.body ?? "{}")) as {
+      identifiers?: Array<{ id?: string; name?: string }>;
+    };
+    const data = (body.identifiers ?? []).map((identifier) => {
+      const id = identifier.id ?? identifier.name ?? "unknown";
+      const rank = Number(id.replace("id-", "")) || 1;
+      return {
+        id,
+        oracle_id: `oracle-${rank}`,
+        name: `Commander ${rank}`,
+        type_line: "Legendary Creature — Elf Druid",
+        oracle_text:
+          "Create a 1/1 green Elf Warrior creature token. Whenever a creature dies, draw a card.",
+        color_identity: ["G"],
+        prices: { usd: "0.50" },
+        released_at: "2026-01-01",
+        set_name: "Test Set",
+      };
+    });
+    return jsonResponse({ data });
+  }
+  return new Response("{}", { status: 404 });
+}) as typeof fetch;
+
+const thousandCatalog = await buildLiveCatalog({
+  seed: [],
+  pages: 10,
+  fetchImpl: thousandFetch,
+  generatedAt: "2026-10-24T12:00:00.000Z",
+});
+assert.equal(thousandCatalog.commanders.length, 1000);
+assert.equal(thousandCatalog.meta.total, 1000);
+assert.equal(thousandCatalog.meta.generated, 1000);
+assert.equal(thousandCatalog.commanders[0].rank, 1);
+assert.equal(thousandCatalog.commanders.at(-1)?.rank, 1000);
+assert.ok(thousandCatalog.commanders.every((cmd) => cmd.colors.length > 0));
+assert.ok(thousandCatalog.commanders.every((cmd) => Boolean(cmd.scryfallId)));
 
 console.log("Smoke tests passed");
