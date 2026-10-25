@@ -1,12 +1,18 @@
-import type { Commander } from "../types";
-import { PART1 } from "./commanders1";
-import { PART2 } from "./commanders2";
-import { PART3 } from "./commanders3";
+import type { Commander, CommanderCatalog } from "../types";
+import catalogJson from "./commanders.catalog.json";
+import seedJson from "./commanders.seed.json";
 
 /**
- * The 100 most-built Commander decks on EDHREC (past two years),
- * annotated with playstyle vectors for the quiz engine.
+ * The curated top-100 annotations are the offline seed. The catalog is
+ * refreshed from EDHREC + Scryfall by `npm run data:refresh` and can also be
+ * expanded live in the browser.
  */
-export const COMMANDERS: Commander[] = [...PART1, ...PART2, ...PART3].sort(
-  (a, b) => a.rank - b.rank,
-);
+export const CURATED_COMMANDERS = seedJson as unknown as Commander[];
+
+export const INITIAL_CATALOG = catalogJson as unknown as CommanderCatalog;
+
+export const COMMANDERS: Commander[] = INITIAL_CATALOG.commanders.length
+  ? INITIAL_CATALOG.commanders
+  : CURATED_COMMANDERS;
+
+export const INITIAL_CATALOG_META = INITIAL_CATALOG.meta;
