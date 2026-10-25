@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/refresh-on-ci.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/copy-catalog.mjs",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "data:refresh": "tsx scripts/refresh-catalog.ts",
