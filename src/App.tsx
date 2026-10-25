@@ -59,7 +59,7 @@ function loadInitialCatalog(): {
   if (
     cached &&
     Array.isArray(cached.commanders) &&
-    cached.commanders.length > 0 &&
+    cached.commanders.length >= INITIAL_CATALOG.commanders.length &&
     cached.meta
   ) {
     return {
@@ -70,7 +70,15 @@ function loadInitialCatalog(): {
       status: "cached",
     };
   }
-  return { catalog: INITIAL_CATALOG, status: "seed" };
+  const checkedInStatus: CatalogStatus =
+    INITIAL_CATALOG.meta.status === "seed" ? "seed" : "cached";
+  return {
+    catalog: {
+      ...INITIAL_CATALOG,
+      meta: { ...INITIAL_CATALOG.meta, status: checkedInStatus },
+    },
+    status: checkedInStatus,
+  };
 }
 
 function errorMessage(error: unknown): string {
@@ -215,9 +223,14 @@ export default function App() {
     const timeout = window.setTimeout(() => controller.abort(), 15000);
 
     try {
+      // Never shrink a checked-in 500-commander catalog down to 300 on refresh.
+      const pages = Math.min(
+        10,
+        Math.max(3, Math.ceil(catalogRef.current.commanders.length / 100)),
+      );
       const result = await buildLiveCatalog({
         seed: CURATED_COMMANDERS,
-        pages: 3,
+        pages,
         signal: controller.signal,
       });
       setCatalog(result);

@@ -12,7 +12,7 @@ const result = spawnSync(npm, ["run", "data:refresh"], {
   stdio: "inherit",
   env: {
     ...process.env,
-    CATALOG_PAGES: process.env.CATALOG_PAGES || "3",
+    CATALOG_PAGES: process.env.CATALOG_PAGES || "5",
   },
 });
 
