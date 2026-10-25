@@ -37,11 +37,18 @@ export type ComplexityLevel = 1 | 2 | 3 | 4 | 5;
 export type BracketEstimate = 1 | 2 | 3 | 4;
 export type DataQuality = "curated" | "generated";
 
+export type QuestionKind =
+  | "profile"
+  | "constraint"
+  | "strategy"
+  | "dealbreaker"
+  | "adaptive";
+
 export interface Option {
   id: string;
   label: string;
   emoji: string;
-  /** color + archetype weights */
+  /** color + archetype weights; negative values are allowed for dealbreakers */
   w?: Weights;
   /** preferred rules complexity, 1 (simple) – 5 (intricate) */
   cx?: number;
@@ -49,6 +56,8 @@ export interface Option {
   bg?: BudgetLevel;
   /** favourite franchise */
   fr?: Franchise;
+  /** commander name whose art should be shown for visual tie-breakers */
+  art?: string;
 }
 
 export interface Question {
@@ -57,6 +66,9 @@ export interface Question {
   hint?: string;
   /** asked in the short "quick reading" too */
   core?: boolean;
+  kind?: QuestionKind;
+  /** archetypes this adaptive tie-breaker helps disambiguate */
+  targets?: ArchKey[];
   options: Option[];
 }
 

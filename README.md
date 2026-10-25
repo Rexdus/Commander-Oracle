@@ -5,8 +5,10 @@ personality quiz, or skip it and explore a live commander catalog.
 
 ## What it does
 
-- **Two quiz lengths.** A full reading or a quick reading maps taste and
-  behavior onto the five colors and 20 playstyle axes.
+- **Adaptive quiz v2.** A full reading (18 questions) and a quick reading
+  (13 questions) keep the playful, zero-Magic-knowledge tone while rebalancing
+  all 20 playstyle axes, adding plain-language strategy and dealbreaker prompts,
+  and selecting personalized tie-breakers from your earlier answers.
 - **Shareable result links.** Answers and post-quiz preferences are encoded in
   the URL hash, so a result can be reopened, copied or shared with Web Share.
 - **Must-haves & dealbreakers.** Require or avoid colors and strategies, and
@@ -43,9 +45,31 @@ Other useful commands:
 
 ```sh
 npm run typecheck
-npm run test:smoke
+npm test
+npm run test:personas
 npm run build
 ```
+
+## Question design
+
+`src/data/questions.ts` is organized into four groups:
+
+- eight core metaphor questions for tone and color preference;
+- four constraint questions for complexity, budget, universe and dealbreakers;
+- four plain-language strategy questions that deliberately cover all 20
+  archetypes;
+- eight adaptive tie-breakers, from which the full quiz asks two and the quick
+  quiz asks one.
+
+`src/lib/questions.ts` builds the active deck, chooses tie-breakers from the
+partial profile, and provides a fixed encoding deck so shareable links remain
+stable even when an adaptive question is skipped. Negative weights on the
+dealbreaker question are clamped in `buildProfile`, so an avoided archetype can
+be pushed down without producing negative profile values.
+
+`scripts/persona-test.ts` validates the question bank against ten synthetic
+personas covering every archetype. `scripts/smoke-test.ts` also checks question
+coverage, adaptive selection, URL round trips and generated-entry inference.
 
 ## Commander data
 
@@ -73,9 +97,10 @@ labels are estimates and are marked as such in the UI.
 A `Refresh commander catalog` GitHub Actions workflow runs weekly, on
 data-pipeline changes, and can also be started manually. Its default refresh
 reads 10 EDHREC pages, covering ranks 1–1,000. It runs the same script,
-type-checks, and commits the generated catalog when it changes. GitHub Pages
-builds also attempt a catalog refresh before bundling, while local builds stay
-offline.
+type-checks, and commits the generated catalog when it changes. A separate
+`Test` workflow runs typecheck, smoke tests, persona tests and a production
+build on pushes and pull requests. GitHub Pages builds also attempt a catalog
+refresh before bundling, while local builds stay offline.
 
 Data and images come from EDHREC and Scryfall. EDHREC’s JSON endpoints are
 unofficial and may change; the app keeps the previous catalog when a refresh

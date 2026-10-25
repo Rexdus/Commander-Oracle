@@ -268,11 +268,11 @@ export function buildProfile(answers: Option[]): Profile {
     if (opt.w) {
       for (const c of COLORS) {
         const v = opt.w[c];
-        if (v) colors[c] += v;
+        if (v) colors[c] = Math.max(0, colors[c] + v);
       }
       for (const a of ARCHES) {
         const v = opt.w[a];
-        if (v) arch[a] += v;
+        if (v) arch[a] = Math.max(0, arch[a] + v);
       }
     }
     if (opt.cx) cxs.push(opt.cx);

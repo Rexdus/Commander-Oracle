@@ -8,7 +8,7 @@ import type {
   ComplexityLevel,
   Franchise,
 } from "../types";
-import { ARCH_META, guildName } from "./scoring";
+import { ARCHES, ARCH_META, guildName } from "./scoring";
 
 const EDHREC_PAGES_BASE = "https://json.edhrec.com/pages/";
 const SCRYFALL_COLLECTION_URL = "https://api.scryfall.com/cards/collection";
@@ -62,6 +62,7 @@ interface ScryfallCard {
   id?: string;
   oracle_id?: string;
   name?: string;
+  cmc?: number;
   type_line?: string;
   oracle_text?: string;
   color_identity?: string[];
@@ -353,66 +354,189 @@ function franchiseFromSet(cards: ScryfallCard[]): Franchise | undefined {
   return undefined;
 }
 
-function inferArch(
+export function inferArch(
   text: string,
   types: string,
   keywords: string[],
+  colors: ColorKey[] = [],
+  cmc = 0,
 ): Partial<Record<ArchKey, number>> {
-  const value = `${text}\n${types}\n${keywords.join(" ")}`.toLowerCase();
-  const arch: Partial<Record<ArchKey, number>> = {};
-  const add = (key: ArchKey, amount: number) => {
-    arch[key] = Math.max(arch[key] ?? 0, amount);
+  const haystack = `${text}\n${types}\n${keywords.join(" ")}`.toLowerCase();
+  const typeLower = types.toLowerCase();
+  const scores = ARCHES.reduce(
+    (acc, arch) => {
+      acc[arch] = 0;
+      return acc;
+    },
+    {} as Record<ArchKey, number>,
+  );
+
+  const add = (
+    weights: Partial<Record<ArchKey, number>>,
+    factor = 1,
+  ) => {
+    for (const [arch, value] of Object.entries(weights) as Array<
+      [ArchKey, number]
+    >) {
+      scores[arch] += value * factor;
+    }
   };
-  const has = (pattern: RegExp) => pattern.test(value);
 
-  if (has(/token|create .*creature|populate/)) add("tokens", 3);
-  if (has(/graveyard|dies|death|return .*from your graveyard|flashback|reanimate/))
-    add("graveyard", 3);
-  if (has(/sacrifice/)) add("sacrifice", 3);
-  if (has(/\+1\/\+1 counter|\-1\/\-1 counter|proliferate|loyalty counter|counter on/))
-    add("counters", 3);
-  if (has(/landfall|search your library for a land|lands you control|add \{[wubrg]\}/))
-    add("lands", 3);
-  if (has(/artifact|treasure|clue|food|equipment|vehicle/)) add("artifacts", 3);
-  if (has(/instant or sorcery|noncreature spell|magecraft|copy target instant|copy target sorcery/))
-    add("spells", 3);
-  if (has(/enchantment|constellation|aura/)) add("enchant", 3);
-  if (has(/gain life|lifelink/)) add("lifegain", 3);
-  if (has(/equipment|aura|attach|commander creature/)) add("voltron", 2);
-  if (has(/counter target spell|prevent damage|hexproof|ward|can't attack|opponents can't/))
-    add("control", 3);
-  if (has(/players can't|opponents can't|can't untap|can't cast|tax/)) add("stax", 3);
-  if (has(/gain control|steal|exile .*from an opponent|play .*from their graveyard/))
-    add("theft", 3);
-  if (has(/coin flip|random|roll (a |the )?d|die|chaos/)) add("chaos", 3);
-  if (has(/untap|infinite|storm|copy|combo/)) add("combo", 2);
-  if (has(/draw (a|cards)|whenever .* enters|card advantage/)) add("value", 2);
-  if (has(/haste|attack|combat damage|menace|trample/)) add("aggro", 2);
-  if (has(/each player|choose a player|monarch|goad|opponent/)) add("politics", 2);
+  const signals: Array<{
+    pattern: RegExp;
+    weights: Partial<Record<ArchKey, number>>;
+  }> = [
+    {
+      pattern: /create [^\n]{0,50}token|token (creature|you control)|populate/,
+      weights: { tokens: 3, kindred: 0.5 },
+    },
+    {
+      pattern:
+        /graveyard|dies|death|return [^\n]{0,40}from your graveyard|flashback|reanimate|mill|unearth|escape/,
+      weights: { graveyard: 3, value: 0.5 },
+    },
+    {
+      pattern: /sacrifice|sacrifices|sacrificed/,
+      weights: { sacrifice: 3, graveyard: 1 },
+    },
+    {
+      pattern:
+        /\+1\/\+1 counter|-1\/-1 counter|proliferate|loyalty counter|charge counter|counter on|keyword counter/,
+      weights: { counters: 3, value: 0.5 },
+    },
+    {
+      pattern:
+        /landfall|search your library for a (basic )?land|lands you control|add \{[wubrg]\}|domain|gate/,
+      weights: { lands: 3, value: 0.5 },
+    },
+    {
+      pattern:
+        /artifact|treasure|clue|food|equipment|vehicle|metalcraft|affinity for artifacts/,
+      weights: { artifacts: 3, value: 0.5 },
+    },
+    {
+      pattern:
+        /instant or sorcery|noncreature spell|magecraft|prowess|copy target instant|copy target sorcery|storm/,
+      weights: { spells: 3, combo: 0.5 },
+    },
+    {
+      pattern: /enchantment|constellation|aura|bestow|rune|sigil|shrine/,
+      weights: { enchant: 3, control: 0.5 },
+    },
+    {
+      pattern: /gain (that much )?life|lifelink|life total|soul sister/,
+      weights: { lifegain: 3, control: 0.5 },
+    },
+    {
+      pattern:
+        /equipment|aura|attach|commander creature|hexproof|ward|protection from/,
+      weights: { voltron: 2.5, control: 0.5 },
+    },
+    {
+      pattern:
+        /counter target spell|prevent (all )?damage|can't attack|can't be blocked|destroy all|exile all/,
+      weights: { control: 2.5, stax: 0.5 },
+    },
+    {
+      pattern:
+        /players can't|opponents can't|can't untap|can't cast|can't draw|tax|rule of law/,
+      weights: { stax: 3, control: 1 },
+    },
+    {
+      pattern:
+        /gain control|steal|exile [^\n]{0,40}from an opponent|play [^\n]{0,40}from their graveyard|control another player|cast [^\n]{0,40}from an opponent/,
+      weights: { theft: 3, politics: 0.5 },
+    },
+    {
+      pattern:
+        /coin flip|random|roll a d|roll the d|die|dice|chaos|wheel effect/,
+      weights: { chaos: 3, politics: 0.5 },
+    },
+    {
+      pattern:
+        /untap|infinite|storm|copy|combo|chain|additional combat|extra turn/,
+      weights: { combo: 2.5, spells: 0.5 },
+    },
+    {
+      pattern:
+        /draw (a|cards|two|three)|whenever [^\n]{0,60}enters|card advantage|scry|surveil|ramp/,
+      weights: { value: 2.5 },
+    },
+    {
+      pattern:
+        /haste|attack|combat damage|menace|trample|first strike|double strike/,
+      weights: { aggro: 2.5, voltron: 0.5 },
+    },
+    {
+      pattern:
+        /each player|choose a player|monarch|goad|opponent|council's dilemma|vote/,
+      weights: { politics: 2.5, theft: 0.5 },
+    },
+    {
+      pattern:
+        /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|human|warrior|wizard|knight|soldier|creatures you control|party/,
+      weights: { kindred: 2.5, tokens: 0.5 },
+    },
+    {
+      pattern:
+        /power (4|5|6|7) or greater|mana value (6|7|8) or greater|largest|colossal|leviathan|dreadnought|behemoth/,
+      weights: { bigstuff: 3 },
+    },
+  ];
+
+  for (const signal of signals) {
+    if (signal.pattern.test(haystack)) add(signal.weights);
+  }
+
+  // Card-frame signals.
+  if (/planeswalker/.test(typeLower)) add({ control: 1.2, value: 1 });
+  if (/equipment|aura/.test(typeLower)) add({ voltron: 1.5 });
+  if (/god|demigod/.test(typeLower)) add({ enchant: 1, bigstuff: 1 });
   if (
-    has(
-      /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|human|warrior|wizard|creatures you control/,
+    /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|human|warrior|wizard|knight|soldier/.test(
+      typeLower,
     )
-  )
-    add("kindred", 3);
-  if (has(/power (4|5|6|7) or greater|mana value (6|7|8)|largest|colossal/))
-    add("bigstuff", 3);
-  if (/planeswalker/.test(types.toLowerCase())) {
-    add("control", 2);
-    add("value", 2);
+  ) {
+    add({ kindred: 1.5, bigstuff: 0.8 });
+  }
+  if (keywords.some((keyword) => /partner|background/i.test(keyword))) {
+    add({ politics: 1, value: 0.8 });
+  }
+  if (keywords.some((keyword) => /commander/i.test(keyword))) {
+    add({ voltron: 0.8 });
   }
 
-  if (Object.keys(arch).length === 0) {
-    add("value", 2);
-    add("kindred", 1);
-  }
+  // Small color priors help when Oracle text is terse.
+  const colorPriors: Record<ColorKey, Partial<Record<ArchKey, number>>> = {
+    W: { tokens: 0.8, lifegain: 0.8, control: 0.5, enchant: 0.5 },
+    U: { spells: 0.8, control: 0.8, artifacts: 0.4, combo: 0.4 },
+    B: { graveyard: 0.8, sacrifice: 0.8, theft: 0.4 },
+    R: { aggro: 0.8, chaos: 0.8, spells: 0.4 },
+    G: { lands: 0.8, bigstuff: 0.8, kindred: 0.5, counters: 0.5 },
+  };
+  for (const color of colors) add(colorPriors[color], 0.6);
 
-  // Keep generated vectors focused; too many tiny axes flatten the cosine fit.
-  return Object.fromEntries(
-    Object.entries(arch)
-      .sort(([, a], [, b]) => b - a)
-      .slice(0, 5),
-  ) as Partial<Record<ArchKey, number>>;
+  if (cmc >= 6) add({ bigstuff: 1.2, lands: 0.6 });
+  else if (cmc > 0 && cmc <= 2) add({ aggro: 0.8, voltron: 0.4 });
+
+  const positive = ARCHES.filter((arch) => scores[arch] > 0.05)
+    .map((arch) => ({ arch, score: scores[arch] }))
+    .sort(
+      (a, b) => b.score - a.score || a.arch.localeCompare(b.arch),
+    );
+
+  if (positive.length === 0) return { value: 2, kindred: 1 };
+
+  const max = positive[0].score;
+  const result: Partial<Record<ArchKey, number>> = {};
+  for (const [index, entry] of positive.slice(0, 5).entries()) {
+    const normalized = Math.max(
+      1,
+      Math.min(3, Math.round((entry.score / max) * 3)),
+    );
+    result[entry.arch] = index === 0 ? Math.max(2, normalized) : normalized;
+  }
+  return result;
 }
 
 function inferDifficulty(
@@ -520,7 +644,9 @@ function buildCommander(
   const text = foundCurated ? "" : oracleText(cards);
   const types = typeLine(cards);
   const keywords = cards.flatMap((card) => card.keywords ?? []);
-  const generatedArch = foundCurated ? foundCurated.arch : inferArch(text, types, keywords);
+  const generatedArch = foundCurated
+    ? foundCurated.arch
+    : inferArch(text, types, keywords, colors, cards[0]?.cmc ?? 0);
   const price = priceUsd(cards);
   const inferredDifficulty = foundCurated
     ? foundCurated.difficulty
