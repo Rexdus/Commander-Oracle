@@ -474,7 +474,7 @@ export function inferArch(
     },
     {
       pattern:
-        /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|human|warrior|wizard|knight|soldier|creatures you control|party/,
+        /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|leviathan|hydra|spider|snake|ninja|samurai|creatures? you control|party|choose a creature type/,
       weights: { kindred: 2.5, tokens: 0.5 },
     },
     {
@@ -493,7 +493,7 @@ export function inferArch(
   if (/equipment|aura/.test(typeLower)) add({ voltron: 1.5 });
   if (/god|demigod/.test(typeLower)) add({ enchant: 1, bigstuff: 1 });
   if (
-    /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|human|warrior|wizard|knight|soldier/.test(
+    /dragon|dinosaur|elf|goblin|zombie|vampire|merfolk|sliver|angel|beast|bird|cat|dog|rat|squirrel|leviathan|hydra|spider|snake|ninja|samurai/.test(
       typeLower,
     )
   ) {

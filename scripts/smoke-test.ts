@@ -546,5 +546,14 @@ const counterInference = inferArch(
 );
 assert.ok((counterInference.counters ?? 0) > 0);
 assert.ok((counterInference.kindred ?? 0) > 0);
+const genericInference = inferArch(
+  "Draw a card.",
+  "Legendary Creature — Human Warrior",
+  [],
+  ["W"],
+  3,
+);
+assert.equal(genericInference.kindred ?? 0, 0);
+assert.ok((genericInference.value ?? 0) > 0);
 
 console.log("Smoke tests passed");
